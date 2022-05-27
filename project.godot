@@ -13,6 +13,11 @@ config_version=4
 config/name="Godot Game Jam"
 run/main_scene="res://World.tscn"
 
+[display]
+
+window/size/width=1280
+window/size/height=720
+
 [physics]
 
 common/enable_pause_aware_picking=true
