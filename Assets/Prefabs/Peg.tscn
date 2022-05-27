@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://CollisionShapes/pegShape.tres" type="Shape2D" id=1]
+[ext_resource path="res://Assets/Images/amobia.png" type="Texture" id=2]
+
+[node name="Sprite" type="Sprite"]
+position = Vector2( 20, 20 )
+scale = Vector2( 0.375, 0.375 )
+texture = ExtResource( 2 )
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+shape = ExtResource( 1 )
