@@ -12,7 +12,6 @@ config_version=4
 
 config/name="Godot Game Jam"
 run/main_scene="res://World.tscn"
-config/icon="res://icon.png"
 
 [physics]
 
