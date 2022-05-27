@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://R.7bef46868f4e29fb5276fec1717ee2c7.png" type="Texture" id=1]
+
+[node name="World" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -153, -90 )
+scale = Vector2( 0.0655738, 0.0655738 )
+texture = ExtResource( 1 )
