@@ -6,3 +6,12 @@ C:\Users\gromi\Documents\GitHub\godot-game-jam\.mono\temp\obj\Debug\Godot Game J
 C:\Users\gromi\Documents\GitHub\godot-game-jam\.mono\temp\obj\Debug\Godot Game Jam.csproj.CoreCompileInputs.cache
 C:\Users\gromi\Documents\GitHub\godot-game-jam\.mono\temp\obj\Debug\Godot Game Jam.dll
 C:\Users\gromi\Documents\GitHub\godot-game-jam\.mono\temp\obj\Debug\Godot Game Jam.pdb
+C:\Users\Meliphas\Documents\Godot\godot-game-jam\.mono\temp\bin\Debug\Godot Game Jam.dll
+C:\Users\Meliphas\Documents\Godot\godot-game-jam\.mono\temp\bin\Debug\Godot Game Jam.pdb
+C:\Users\Meliphas\Documents\Godot\godot-game-jam\.mono\temp\obj\Debug\Godot Game Jam.csproj.AssemblyReference.cache
+C:\Users\Meliphas\Documents\Godot\godot-game-jam\.mono\temp\obj\Debug\Godot Game Jam.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Meliphas\Documents\Godot\godot-game-jam\.mono\temp\obj\Debug\Godot Game Jam.AssemblyInfoInputs.cache
+C:\Users\Meliphas\Documents\Godot\godot-game-jam\.mono\temp\obj\Debug\Godot Game Jam.AssemblyInfo.cs
+C:\Users\Meliphas\Documents\Godot\godot-game-jam\.mono\temp\obj\Debug\Godot Game Jam.csproj.CoreCompileInputs.cache
+C:\Users\Meliphas\Documents\Godot\godot-game-jam\.mono\temp\obj\Debug\Godot Game Jam.dll
+C:\Users\Meliphas\Documents\Godot\godot-game-jam\.mono\temp\obj\Debug\Godot Game Jam.pdb

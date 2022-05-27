@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Assets/Prefabs/Peg.tscn" type="PackedScene" id=1]
 [ext_resource path="res://PegController.cs" type="Script" id=2]
+[ext_resource path="res://Assets/Prefabs/Ballmeba.tscn" type="PackedScene" id=3]
 
 [node name="World" type="Node2D"]
 script = ExtResource( 2 )
@@ -15,8 +16,23 @@ margin_top = -227.0
 margin_right = 640.0
 margin_bottom = 360.0
 
-[node name="Sprite" parent="GameSpace" instance=ExtResource( 1 )]
-position = Vector2( 137, 98 )
+[node name="Peggy" parent="GameSpace" instance=ExtResource( 1 )]
+position = Vector2( 139, 106 )
+
+[node name="Peggy2" parent="GameSpace" instance=ExtResource( 1 )]
+position = Vector2( 202, 177 )
+
+[node name="Peggy3" parent="GameSpace" instance=ExtResource( 1 )]
+position = Vector2( 77, 172 )
+
+[node name="Peggy4" parent="GameSpace" instance=ExtResource( 1 )]
+position = Vector2( 262, 147 )
+
+[node name="Peggy5" parent="GameSpace" instance=ExtResource( 1 )]
+position = Vector2( 293, 67 )
+
+[node name="Ballmeba" parent="GameSpace" instance=ExtResource( 3 )]
+position = Vector2( 130, 10 )
 
 [node name="LeftMargin" type="Container" parent="."]
 margin_left = -640.0

@@ -1,31 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\gromi\\Documents\\GitHub\\godot-game-jam\\Godot Game Jam.csproj": {}
+    "C:\\Users\\Meliphas\\Documents\\Godot\\godot-game-jam\\Godot Game Jam.csproj": {}
   },
   "projects": {
-    "C:\\Users\\gromi\\Documents\\GitHub\\godot-game-jam\\Godot Game Jam.csproj": {
+    "C:\\Users\\Meliphas\\Documents\\Godot\\godot-game-jam\\Godot Game Jam.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\gromi\\Documents\\GitHub\\godot-game-jam\\Godot Game Jam.csproj",
+        "projectUniqueName": "C:\\Users\\Meliphas\\Documents\\Godot\\godot-game-jam\\Godot Game Jam.csproj",
         "projectName": "Godot Game Jam",
-        "projectPath": "C:\\Users\\gromi\\Documents\\GitHub\\godot-game-jam\\Godot Game Jam.csproj",
-        "packagesPath": "C:\\Users\\gromi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\gromi\\Documents\\GitHub\\godot-game-jam\\.mono\\temp\\obj\\",
+        "projectPath": "C:\\Users\\Meliphas\\Documents\\Godot\\godot-game-jam\\Godot Game Jam.csproj",
+        "packagesPath": "C:\\Users\\Meliphas\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Meliphas\\Documents\\Godot\\godot-game-jam\\.mono\\temp\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\gromi\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Meliphas\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net472"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -43,7 +37,15 @@
       "frameworks": {
         "net472": {
           "targetAlias": "net472",
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+          "dependencies": {
+            "Microsoft.NETFramework.ReferenceAssemblies": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.0.2, )",
+              "autoReferenced": true
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     }
