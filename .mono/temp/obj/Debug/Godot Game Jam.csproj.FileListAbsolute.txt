@@ -1,0 +1,8 @@
+C:\Users\gromi\Documents\GitHub\godot-game-jam\.mono\temp\bin\Debug\Godot Game Jam.dll
+C:\Users\gromi\Documents\GitHub\godot-game-jam\.mono\temp\bin\Debug\Godot Game Jam.pdb
+C:\Users\gromi\Documents\GitHub\godot-game-jam\.mono\temp\obj\Debug\Godot Game Jam.csprojAssemblyReference.cache
+C:\Users\gromi\Documents\GitHub\godot-game-jam\.mono\temp\obj\Debug\Godot Game Jam.AssemblyInfoInputs.cache
+C:\Users\gromi\Documents\GitHub\godot-game-jam\.mono\temp\obj\Debug\Godot Game Jam.AssemblyInfo.cs
+C:\Users\gromi\Documents\GitHub\godot-game-jam\.mono\temp\obj\Debug\Godot Game Jam.csproj.CoreCompileInputs.cache
+C:\Users\gromi\Documents\GitHub\godot-game-jam\.mono\temp\obj\Debug\Godot Game Jam.dll
+C:\Users\gromi\Documents\GitHub\godot-game-jam\.mono\temp\obj\Debug\Godot Game Jam.pdb
