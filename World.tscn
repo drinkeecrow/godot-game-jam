@@ -12,20 +12,20 @@ current = true
 [node name="GameSpace" type="Container" parent="."]
 margin_left = -346.0
 margin_top = -227.0
-margin_right = 512.0
-margin_bottom = 300.0
+margin_right = 640.0
+margin_bottom = 360.0
 
 [node name="Sprite" parent="GameSpace" instance=ExtResource( 1 )]
 position = Vector2( 137, 98 )
 
 [node name="LeftMargin" type="Container" parent="."]
-margin_left = -512.0
-margin_top = -300.0
+margin_left = -640.0
+margin_top = -360.0
 margin_right = -346.0
-margin_bottom = 300.0
+margin_bottom = 359.0
 
 [node name="TopMargin" type="Container" parent="."]
 margin_left = -346.0
-margin_top = -300.0
-margin_right = 512.0
+margin_top = -361.0
+margin_right = 639.0
 margin_bottom = -227.0
