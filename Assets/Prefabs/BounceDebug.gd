@@ -5,6 +5,7 @@ extends KinematicBody2D
 # var a = 2
 # var b = "text"
 var ball = preload("res://Assets/Prefabs/Ballmeba.tscn")
+var floaty = preload("res://Assets/Prefabs/floatyText.tscn")
 var canSpawn = true
 var hMove = 0;
 var vMove = 1000;
@@ -32,7 +33,10 @@ func _ready():
 
 func _on_Area2D_body_entered(body):
 	if not body == self:
-		print('Boing: ')
+		print("Boing")
+		var red = self.get_node("Sprite").get_modulate().r
+		self.get_node("Sprite").modulate = Color(red+0.2,1,1)
+		
 #		if self.canSpawn:
 #			var instance = ball.instance()
 #			#instance.position.x = body.get_parent().position.x +30
@@ -43,4 +47,4 @@ func _on_Area2D_body_entered(body):
 #			self.get_parent().add_child(instance)
 #			print(body.get_parent().get_name() + ' ' + str(body.get_parent().position.x) + ' ' + str(body.get_parent().position.y))
 #			self.canSpawn = false
-#			self.get_node("Sprite").modulate = Color(0,0,1)
+

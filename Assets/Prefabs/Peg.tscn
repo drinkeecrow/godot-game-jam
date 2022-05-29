@@ -15,6 +15,9 @@ shape = ExtResource( 1 )
 position = Vector2( 5.96046e-08, 5.96046e-08 )
 scale = Vector2( 0.390625, 0.390625 )
 texture = ExtResource( 2 )
+__meta__ = {
+"_editor_description_": "YXNlcHJpdGVfd2l6YXJkX2NvbmZpZwpwbGF5ZXJ8PQpzb3VyY2V8PQpsYXllcnw9Cm9wX2V4cHw9VHJ1ZQpvX2ZvbGRlcnw9Cm9fbmFtZXw9Cm9ubHlfdmlzaWJsZXw9RmFsc2UKb19leF9wfD0K"
+}
 
 [node name="Area2D" type="Area2D" parent="."]
 
