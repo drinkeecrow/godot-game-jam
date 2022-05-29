@@ -1,11 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xXv69By/2jO0Dkt2eyHQwJcYbfx/anNMfaoPuvUAj5dh+ptA5jk2lbFro7oLdC8yiHrj/pMlakPGhmqaAHoCfg==",
+  "dgSpecHash": "vwEieeXyhmWpsFXoOI8Tj0tKTcIB7qVJErmR8gNr8wgBliNAPTi/FsieaqCCrGgLPfsom/dzPEDSSZ0XimyJPg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Meliphas\\Documents\\Godot\\godot-game-jam\\Godot Game Jam.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\Meliphas\\.nuget\\packages\\microsoft.netframework.referenceassemblies\\1.0.2\\microsoft.netframework.referenceassemblies.1.0.2.nupkg.sha512",
-    "C:\\Users\\Meliphas\\.nuget\\packages\\microsoft.netframework.referenceassemblies.net472\\1.0.2\\microsoft.netframework.referenceassemblies.net472.1.0.2.nupkg.sha512"
-  ],
+  "projectFilePath": "C:\\Users\\gromi\\Documents\\GitHub\\godot-game-jam\\Godot Game Jam.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }
