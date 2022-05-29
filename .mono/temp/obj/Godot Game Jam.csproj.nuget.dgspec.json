@@ -1,23 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\gromi\\Documents\\GitHub\\godot-game-jam\\Godot Game Jam.csproj": {}
+    "P:\\GodotGameJam\\godot-game-jam\\Godot Game Jam.csproj": {}
   },
   "projects": {
-    "C:\\Users\\gromi\\Documents\\GitHub\\godot-game-jam\\Godot Game Jam.csproj": {
+    "P:\\GodotGameJam\\godot-game-jam\\Godot Game Jam.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\gromi\\Documents\\GitHub\\godot-game-jam\\Godot Game Jam.csproj",
+        "projectUniqueName": "P:\\GodotGameJam\\godot-game-jam\\Godot Game Jam.csproj",
         "projectName": "Godot Game Jam",
-        "projectPath": "C:\\Users\\gromi\\Documents\\GitHub\\godot-game-jam\\Godot Game Jam.csproj",
-        "packagesPath": "C:\\Users\\gromi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\gromi\\Documents\\GitHub\\godot-game-jam\\.mono\\temp\\obj\\",
+        "projectPath": "P:\\GodotGameJam\\godot-game-jam\\Godot Game Jam.csproj",
+        "packagesPath": "C:\\Users\\chris\\.nuget\\packages\\",
+        "outputPath": "P:\\GodotGameJam\\godot-game-jam\\.mono\\temp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
+          "E:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\gromi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\chris\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -43,7 +45,7 @@
       "frameworks": {
         "net472": {
           "targetAlias": "net472",
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }
