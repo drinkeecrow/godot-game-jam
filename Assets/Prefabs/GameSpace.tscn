@@ -2,14 +2,14 @@
 
 [ext_resource path="res://PegController.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Prefabs/Ballmeba.tscn" type="PackedScene" id=2]
-[ext_resource path="res://botWall.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Prefabs/botWall.tscn" type="PackedScene" id=3]
 [ext_resource path="res://CollisionShapes/wallShape.tres" type="Shape2D" id=4]
 [ext_resource path="res://Assets/Images/background.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Prefabs/Peg.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Assets/Prefabs/PegMoveHorizontal.gd" type="Script" id=7]
 [ext_resource path="res://MoveChildrenHorizontal.gd" type="Script" id=8]
 [ext_resource path="res://World1Controller.gd" type="Script" id=9]
 [ext_resource path="res://MoveChildrenCircle.gd" type="Script" id=10]
+[ext_resource path="res://Assets/Prefabs/ScoreBox.tscn" type="PackedScene" id=11]
 
 [node name="GameSpace" type="Container"]
 margin_left = -346.0
@@ -20,7 +20,7 @@ rect_scale = Vector2( 1, 1.00079 )
 script = ExtResource( 1 )
 
 [node name="Ballmeba" parent="." instance=ExtResource( 2 )]
-position = Vector2( 242, -148.882 )
+position = Vector2( 619, -140.889 )
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
 position = Vector2( -20, 0 )
@@ -35,37 +35,66 @@ show_behind_parent = true
 position = Vector2( 493, 292.768 )
 texture = ExtResource( 5 )
 
-[node name="Bottom Walls" type="Node2D" parent="."]
+[node name="ScoreArea" type="Node2D" parent="."]
 
-[node name="BotWall" parent="Bottom Walls" instance=ExtResource( 3 )]
-position = Vector2( -6, 19 )
+[node name="BotWall" parent="ScoreArea" instance=ExtResource( 3 )]
+position = Vector2( -8, 19 )
 
-[node name="BotWall2" parent="Bottom Walls" instance=ExtResource( 3 )]
-position = Vector2( 98, 19 )
+[node name="BotWall2" parent="ScoreArea" instance=ExtResource( 3 )]
+position = Vector2( 101, 19 )
 
-[node name="BotWall3" parent="Bottom Walls" instance=ExtResource( 3 )]
-position = Vector2( 202, 19 )
+[node name="BotWall3" parent="ScoreArea" instance=ExtResource( 3 )]
+position = Vector2( 212, 19 )
 
-[node name="BotWall4" parent="Bottom Walls" instance=ExtResource( 3 )]
-position = Vector2( 312, 19 )
+[node name="BotWall4" parent="ScoreArea" instance=ExtResource( 3 )]
+position = Vector2( 321, 18.985 )
 
-[node name="BotWall5" parent="Bottom Walls" instance=ExtResource( 3 )]
-position = Vector2( 418, 19 )
+[node name="BotWall5" parent="ScoreArea" instance=ExtResource( 3 )]
+position = Vector2( 430, 18.985 )
 
-[node name="BotWall6" parent="Bottom Walls" instance=ExtResource( 3 )]
-position = Vector2( 538, 19 )
+[node name="BotWall6" parent="ScoreArea" instance=ExtResource( 3 )]
+position = Vector2( 539, 18.985 )
 
-[node name="BotWall7" parent="Bottom Walls" instance=ExtResource( 3 )]
-position = Vector2( 650, 19 )
+[node name="BotWall7" parent="ScoreArea" instance=ExtResource( 3 )]
+position = Vector2( 647, 18.985 )
 
-[node name="BotWall8" parent="Bottom Walls" instance=ExtResource( 3 )]
-position = Vector2( 754, 19 )
+[node name="BotWall8" parent="ScoreArea" instance=ExtResource( 3 )]
+position = Vector2( 755, 18.985 )
 
-[node name="BotWall9" parent="Bottom Walls" instance=ExtResource( 3 )]
-position = Vector2( 858, 19 )
+[node name="BotWall9" parent="ScoreArea" instance=ExtResource( 3 )]
+position = Vector2( 864, 18.985 )
 
-[node name="BotWall10" parent="Bottom Walls" instance=ExtResource( 3 )]
-position = Vector2( 970, 19 )
+[node name="BotWall10" parent="ScoreArea" instance=ExtResource( 3 )]
+position = Vector2( 970, 18.985 )
+
+[node name="ScoreBoxes" type="Node2D" parent="ScoreArea"]
+
+[node name="ScoreBox1" parent="ScoreArea/ScoreBoxes" instance=ExtResource( 11 )]
+position = Vector2( -3, 0 )
+
+[node name="ScoreBox2" parent="ScoreArea/ScoreBoxes" instance=ExtResource( 11 )]
+position = Vector2( 107, 0 )
+
+[node name="ScoreBox3" parent="ScoreArea/ScoreBoxes" instance=ExtResource( 11 )]
+position = Vector2( 216, 0 )
+
+[node name="ScoreBox4" parent="ScoreArea/ScoreBoxes" instance=ExtResource( 11 )]
+position = Vector2( 325, 0 )
+
+[node name="ScoreBox5" parent="ScoreArea/ScoreBoxes" instance=ExtResource( 11 )]
+position = Vector2( 435, 0 )
+
+[node name="ScoreBox6" parent="ScoreArea/ScoreBoxes" instance=ExtResource( 11 )]
+position = Vector2( 543, 0 )
+
+[node name="ScoreBox7" parent="ScoreArea/ScoreBoxes" instance=ExtResource( 11 )]
+position = Vector2( 651, 0 )
+
+[node name="ScoreBox8" parent="ScoreArea/ScoreBoxes" instance=ExtResource( 11 )]
+position = Vector2( 759, 0 )
+
+[node name="ScoreBox9" parent="ScoreArea/ScoreBoxes" instance=ExtResource( 11 )]
+position = Vector2( 868, 0 )
 
 [node name="Pegs" type="Node2D" parent="."]
 script = ExtResource( 9 )
@@ -75,49 +104,42 @@ script = ExtResource( 8 )
 
 [node name="RigidBody2D2" parent="Pegs/Hrow1" instance=ExtResource( 6 )]
 position = Vector2( 42, 42.966 )
-script = ExtResource( 7 )
 
 [node name="RigidBody2D3" parent="Pegs/Hrow1" instance=ExtResource( 6 )]
 position = Vector2( 103, 66.9471 )
 
 [node name="RigidBody2D4" parent="Pegs/Hrow1" instance=ExtResource( 6 )]
 position = Vector2( 170, 42.9661 )
-script = ExtResource( 7 )
 
 [node name="RigidBody2D5" parent="Pegs/Hrow1" instance=ExtResource( 6 )]
 position = Vector2( 243, 66.9471 )
 
 [node name="RigidBody2D6" parent="Pegs/Hrow1" instance=ExtResource( 6 )]
 position = Vector2( 312, 42.966 )
-script = ExtResource( 7 )
 
 [node name="RigidBody2D7" parent="Pegs/Hrow1" instance=ExtResource( 6 )]
 position = Vector2( 386, 66.9471 )
 
 [node name="RigidBody2D8" parent="Pegs/Hrow1" instance=ExtResource( 6 )]
 position = Vector2( 460, 42.9661 )
-script = ExtResource( 7 )
 
 [node name="RigidBody2D9" parent="Pegs/Hrow1" instance=ExtResource( 6 )]
 position = Vector2( 533, 66.9471 )
 
 [node name="RigidBody2D10" parent="Pegs/Hrow1" instance=ExtResource( 6 )]
 position = Vector2( 606, 42.966 )
-script = ExtResource( 7 )
 
 [node name="RigidBody2D11" parent="Pegs/Hrow1" instance=ExtResource( 6 )]
 position = Vector2( 678, 66.9471 )
 
 [node name="RigidBody2D12" parent="Pegs/Hrow1" instance=ExtResource( 6 )]
 position = Vector2( 749, 42.9661 )
-script = ExtResource( 7 )
 
 [node name="RigidBody2D13" parent="Pegs/Hrow1" instance=ExtResource( 6 )]
 position = Vector2( 815, 66.9471 )
 
 [node name="RigidBody2D14" parent="Pegs/Hrow1" instance=ExtResource( 6 )]
 position = Vector2( 890, 42.966 )
-script = ExtResource( 7 )
 
 [node name="RigidBody2D15" parent="Pegs/Hrow1" instance=ExtResource( 6 )]
 position = Vector2( 958, 66.9471 )
@@ -127,49 +149,42 @@ script = ExtResource( 8 )
 
 [node name="RigidBody2D2" parent="Pegs/Hrow2" instance=ExtResource( 6 )]
 position = Vector2( 18, 130.897 )
-script = ExtResource( 7 )
 
 [node name="RigidBody2D3" parent="Pegs/Hrow2" instance=ExtResource( 6 )]
 position = Vector2( 79, 154.878 )
 
 [node name="RigidBody2D4" parent="Pegs/Hrow2" instance=ExtResource( 6 )]
 position = Vector2( 146, 130.897 )
-script = ExtResource( 7 )
 
 [node name="RigidBody2D5" parent="Pegs/Hrow2" instance=ExtResource( 6 )]
 position = Vector2( 219, 154.878 )
 
 [node name="RigidBody2D6" parent="Pegs/Hrow2" instance=ExtResource( 6 )]
 position = Vector2( 288, 130.897 )
-script = ExtResource( 7 )
 
 [node name="RigidBody2D7" parent="Pegs/Hrow2" instance=ExtResource( 6 )]
 position = Vector2( 362, 154.878 )
 
 [node name="RigidBody2D8" parent="Pegs/Hrow2" instance=ExtResource( 6 )]
 position = Vector2( 436, 130.897 )
-script = ExtResource( 7 )
 
 [node name="RigidBody2D9" parent="Pegs/Hrow2" instance=ExtResource( 6 )]
 position = Vector2( 509, 154.878 )
 
 [node name="RigidBody2D10" parent="Pegs/Hrow2" instance=ExtResource( 6 )]
 position = Vector2( 582, 130.897 )
-script = ExtResource( 7 )
 
 [node name="RigidBody2D11" parent="Pegs/Hrow2" instance=ExtResource( 6 )]
 position = Vector2( 654, 154.878 )
 
 [node name="RigidBody2D12" parent="Pegs/Hrow2" instance=ExtResource( 6 )]
 position = Vector2( 725, 130.897 )
-script = ExtResource( 7 )
 
 [node name="RigidBody2D13" parent="Pegs/Hrow2" instance=ExtResource( 6 )]
 position = Vector2( 791, 154.878 )
 
 [node name="RigidBody2D14" parent="Pegs/Hrow2" instance=ExtResource( 6 )]
 position = Vector2( 866, 130.897 )
-script = ExtResource( 7 )
 
 [node name="RigidBody2D15" parent="Pegs/Hrow2" instance=ExtResource( 6 )]
 position = Vector2( 934, 154.878 )
@@ -179,49 +194,42 @@ script = ExtResource( 8 )
 
 [node name="RigidBody2D2" parent="Pegs/Hrow3" instance=ExtResource( 6 )]
 position = Vector2( 42, 362.713 )
-script = ExtResource( 7 )
 
 [node name="RigidBody2D3" parent="Pegs/Hrow3" instance=ExtResource( 6 )]
 position = Vector2( 103, 386.695 )
 
 [node name="RigidBody2D4" parent="Pegs/Hrow3" instance=ExtResource( 6 )]
 position = Vector2( 170, 362.713 )
-script = ExtResource( 7 )
 
 [node name="RigidBody2D5" parent="Pegs/Hrow3" instance=ExtResource( 6 )]
 position = Vector2( 243, 386.695 )
 
 [node name="RigidBody2D6" parent="Pegs/Hrow3" instance=ExtResource( 6 )]
 position = Vector2( 312, 362.713 )
-script = ExtResource( 7 )
 
 [node name="RigidBody2D7" parent="Pegs/Hrow3" instance=ExtResource( 6 )]
 position = Vector2( 386, 386.695 )
 
 [node name="RigidBody2D8" parent="Pegs/Hrow3" instance=ExtResource( 6 )]
 position = Vector2( 460, 362.713 )
-script = ExtResource( 7 )
 
 [node name="RigidBody2D9" parent="Pegs/Hrow3" instance=ExtResource( 6 )]
 position = Vector2( 533, 386.695 )
 
 [node name="RigidBody2D10" parent="Pegs/Hrow3" instance=ExtResource( 6 )]
 position = Vector2( 606, 362.713 )
-script = ExtResource( 7 )
 
 [node name="RigidBody2D11" parent="Pegs/Hrow3" instance=ExtResource( 6 )]
 position = Vector2( 678, 386.695 )
 
 [node name="RigidBody2D12" parent="Pegs/Hrow3" instance=ExtResource( 6 )]
 position = Vector2( 749, 362.713 )
-script = ExtResource( 7 )
 
 [node name="RigidBody2D13" parent="Pegs/Hrow3" instance=ExtResource( 6 )]
 position = Vector2( 815, 386.695 )
 
 [node name="RigidBody2D14" parent="Pegs/Hrow3" instance=ExtResource( 6 )]
 position = Vector2( 890, 362.713 )
-script = ExtResource( 7 )
 
 [node name="RigidBody2D15" parent="Pegs/Hrow3" instance=ExtResource( 6 )]
 position = Vector2( 958, 386.695 )
@@ -231,49 +239,42 @@ script = ExtResource( 8 )
 
 [node name="RigidBody2D2" parent="Pegs/Hrow4" instance=ExtResource( 6 )]
 position = Vector2( 18, 458.638 )
-script = ExtResource( 7 )
 
 [node name="RigidBody2D3" parent="Pegs/Hrow4" instance=ExtResource( 6 )]
 position = Vector2( 79, 482.619 )
 
 [node name="RigidBody2D4" parent="Pegs/Hrow4" instance=ExtResource( 6 )]
 position = Vector2( 146, 458.638 )
-script = ExtResource( 7 )
 
 [node name="RigidBody2D5" parent="Pegs/Hrow4" instance=ExtResource( 6 )]
 position = Vector2( 219, 482.619 )
 
 [node name="RigidBody2D6" parent="Pegs/Hrow4" instance=ExtResource( 6 )]
 position = Vector2( 288, 458.638 )
-script = ExtResource( 7 )
 
 [node name="RigidBody2D7" parent="Pegs/Hrow4" instance=ExtResource( 6 )]
 position = Vector2( 362, 482.619 )
 
 [node name="RigidBody2D8" parent="Pegs/Hrow4" instance=ExtResource( 6 )]
 position = Vector2( 436, 458.638 )
-script = ExtResource( 7 )
 
 [node name="RigidBody2D9" parent="Pegs/Hrow4" instance=ExtResource( 6 )]
 position = Vector2( 509, 482.619 )
 
 [node name="RigidBody2D10" parent="Pegs/Hrow4" instance=ExtResource( 6 )]
 position = Vector2( 582, 458.638 )
-script = ExtResource( 7 )
 
 [node name="RigidBody2D11" parent="Pegs/Hrow4" instance=ExtResource( 6 )]
 position = Vector2( 654, 482.619 )
 
 [node name="RigidBody2D12" parent="Pegs/Hrow4" instance=ExtResource( 6 )]
 position = Vector2( 725, 458.638 )
-script = ExtResource( 7 )
 
 [node name="RigidBody2D13" parent="Pegs/Hrow4" instance=ExtResource( 6 )]
 position = Vector2( 791, 482.619 )
 
 [node name="RigidBody2D14" parent="Pegs/Hrow4" instance=ExtResource( 6 )]
 position = Vector2( 866, 458.638 )
-script = ExtResource( 7 )
 
 [node name="RigidBody2D15" parent="Pegs/Hrow4" instance=ExtResource( 6 )]
 position = Vector2( 934, 482.619 )
@@ -333,10 +334,11 @@ position = Vector2( -43, 39.9684 )
 position = Vector2( 38, 39.9684 )
 
 [node name="Crow4" type="Node2D" parent="Pegs"]
+position = Vector2( 82, 154.878 )
 script = ExtResource( 10 )
 
 [node name="Center" type="Position2D" parent="Pegs/Crow4"]
-position = Vector2( 786, 258.796 )
+position = Vector2( 722, 103.918 )
 
 [node name="RigidBody2D" parent="Pegs/Crow4/Center" instance=ExtResource( 6 )]
 position = Vector2( -43, -47.9621 )
