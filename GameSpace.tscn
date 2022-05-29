@@ -1,0 +1,353 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://PegController.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Prefabs/Ballmeba.tscn" type="PackedScene" id=2]
+[ext_resource path="res://botWall.tscn" type="PackedScene" id=3]
+[ext_resource path="res://CollisionShapes/wallShape.tres" type="Shape2D" id=4]
+[ext_resource path="res://Assets/Images/background.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Prefabs/Peg.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/Prefabs/PegMoveHorizontal.gd" type="Script" id=7]
+[ext_resource path="res://MoveChildrenHorizontal.gd" type="Script" id=8]
+[ext_resource path="res://World1Controller.gd" type="Script" id=9]
+[ext_resource path="res://MoveChildrenCircle.gd" type="Script" id=10]
+
+[node name="GameSpace" type="Container"]
+margin_left = -346.0
+margin_top = -227.0
+margin_right = 640.0
+margin_bottom = 360.0
+rect_scale = Vector2( 1, 1.00079 )
+script = ExtResource( 1 )
+
+[node name="Ballmeba" parent="." instance=ExtResource( 2 )]
+position = Vector2( 242, -148.882 )
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+position = Vector2( -20, 0 )
+mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2( -6.5, 239.5 )
+shape = ExtResource( 4 )
+
+[node name="Background" type="Sprite" parent="."]
+show_behind_parent = true
+position = Vector2( 493, 292.768 )
+texture = ExtResource( 5 )
+
+[node name="Bottom Walls" type="Node2D" parent="."]
+
+[node name="BotWall" parent="Bottom Walls" instance=ExtResource( 3 )]
+position = Vector2( -6, 19 )
+
+[node name="BotWall2" parent="Bottom Walls" instance=ExtResource( 3 )]
+position = Vector2( 98, 19 )
+
+[node name="BotWall3" parent="Bottom Walls" instance=ExtResource( 3 )]
+position = Vector2( 202, 19 )
+
+[node name="BotWall4" parent="Bottom Walls" instance=ExtResource( 3 )]
+position = Vector2( 312, 19 )
+
+[node name="BotWall5" parent="Bottom Walls" instance=ExtResource( 3 )]
+position = Vector2( 418, 19 )
+
+[node name="BotWall6" parent="Bottom Walls" instance=ExtResource( 3 )]
+position = Vector2( 538, 19 )
+
+[node name="BotWall7" parent="Bottom Walls" instance=ExtResource( 3 )]
+position = Vector2( 650, 19 )
+
+[node name="BotWall8" parent="Bottom Walls" instance=ExtResource( 3 )]
+position = Vector2( 754, 19 )
+
+[node name="BotWall9" parent="Bottom Walls" instance=ExtResource( 3 )]
+position = Vector2( 858, 19 )
+
+[node name="BotWall10" parent="Bottom Walls" instance=ExtResource( 3 )]
+position = Vector2( 970, 19 )
+
+[node name="Pegs" type="Node2D" parent="."]
+script = ExtResource( 9 )
+
+[node name="Hrow1" type="Node2D" parent="Pegs"]
+script = ExtResource( 8 )
+
+[node name="RigidBody2D2" parent="Pegs/Hrow1" instance=ExtResource( 6 )]
+position = Vector2( 42, 42.966 )
+script = ExtResource( 7 )
+
+[node name="RigidBody2D3" parent="Pegs/Hrow1" instance=ExtResource( 6 )]
+position = Vector2( 103, 66.9471 )
+
+[node name="RigidBody2D4" parent="Pegs/Hrow1" instance=ExtResource( 6 )]
+position = Vector2( 170, 42.9661 )
+script = ExtResource( 7 )
+
+[node name="RigidBody2D5" parent="Pegs/Hrow1" instance=ExtResource( 6 )]
+position = Vector2( 243, 66.9471 )
+
+[node name="RigidBody2D6" parent="Pegs/Hrow1" instance=ExtResource( 6 )]
+position = Vector2( 312, 42.966 )
+script = ExtResource( 7 )
+
+[node name="RigidBody2D7" parent="Pegs/Hrow1" instance=ExtResource( 6 )]
+position = Vector2( 386, 66.9471 )
+
+[node name="RigidBody2D8" parent="Pegs/Hrow1" instance=ExtResource( 6 )]
+position = Vector2( 460, 42.9661 )
+script = ExtResource( 7 )
+
+[node name="RigidBody2D9" parent="Pegs/Hrow1" instance=ExtResource( 6 )]
+position = Vector2( 533, 66.9471 )
+
+[node name="RigidBody2D10" parent="Pegs/Hrow1" instance=ExtResource( 6 )]
+position = Vector2( 606, 42.966 )
+script = ExtResource( 7 )
+
+[node name="RigidBody2D11" parent="Pegs/Hrow1" instance=ExtResource( 6 )]
+position = Vector2( 678, 66.9471 )
+
+[node name="RigidBody2D12" parent="Pegs/Hrow1" instance=ExtResource( 6 )]
+position = Vector2( 749, 42.9661 )
+script = ExtResource( 7 )
+
+[node name="RigidBody2D13" parent="Pegs/Hrow1" instance=ExtResource( 6 )]
+position = Vector2( 815, 66.9471 )
+
+[node name="RigidBody2D14" parent="Pegs/Hrow1" instance=ExtResource( 6 )]
+position = Vector2( 890, 42.966 )
+script = ExtResource( 7 )
+
+[node name="RigidBody2D15" parent="Pegs/Hrow1" instance=ExtResource( 6 )]
+position = Vector2( 958, 66.9471 )
+
+[node name="Hrow2" type="Node2D" parent="Pegs"]
+script = ExtResource( 8 )
+
+[node name="RigidBody2D2" parent="Pegs/Hrow2" instance=ExtResource( 6 )]
+position = Vector2( 18, 130.897 )
+script = ExtResource( 7 )
+
+[node name="RigidBody2D3" parent="Pegs/Hrow2" instance=ExtResource( 6 )]
+position = Vector2( 79, 154.878 )
+
+[node name="RigidBody2D4" parent="Pegs/Hrow2" instance=ExtResource( 6 )]
+position = Vector2( 146, 130.897 )
+script = ExtResource( 7 )
+
+[node name="RigidBody2D5" parent="Pegs/Hrow2" instance=ExtResource( 6 )]
+position = Vector2( 219, 154.878 )
+
+[node name="RigidBody2D6" parent="Pegs/Hrow2" instance=ExtResource( 6 )]
+position = Vector2( 288, 130.897 )
+script = ExtResource( 7 )
+
+[node name="RigidBody2D7" parent="Pegs/Hrow2" instance=ExtResource( 6 )]
+position = Vector2( 362, 154.878 )
+
+[node name="RigidBody2D8" parent="Pegs/Hrow2" instance=ExtResource( 6 )]
+position = Vector2( 436, 130.897 )
+script = ExtResource( 7 )
+
+[node name="RigidBody2D9" parent="Pegs/Hrow2" instance=ExtResource( 6 )]
+position = Vector2( 509, 154.878 )
+
+[node name="RigidBody2D10" parent="Pegs/Hrow2" instance=ExtResource( 6 )]
+position = Vector2( 582, 130.897 )
+script = ExtResource( 7 )
+
+[node name="RigidBody2D11" parent="Pegs/Hrow2" instance=ExtResource( 6 )]
+position = Vector2( 654, 154.878 )
+
+[node name="RigidBody2D12" parent="Pegs/Hrow2" instance=ExtResource( 6 )]
+position = Vector2( 725, 130.897 )
+script = ExtResource( 7 )
+
+[node name="RigidBody2D13" parent="Pegs/Hrow2" instance=ExtResource( 6 )]
+position = Vector2( 791, 154.878 )
+
+[node name="RigidBody2D14" parent="Pegs/Hrow2" instance=ExtResource( 6 )]
+position = Vector2( 866, 130.897 )
+script = ExtResource( 7 )
+
+[node name="RigidBody2D15" parent="Pegs/Hrow2" instance=ExtResource( 6 )]
+position = Vector2( 934, 154.878 )
+
+[node name="Hrow3" type="Node2D" parent="Pegs"]
+script = ExtResource( 8 )
+
+[node name="RigidBody2D2" parent="Pegs/Hrow3" instance=ExtResource( 6 )]
+position = Vector2( 42, 362.713 )
+script = ExtResource( 7 )
+
+[node name="RigidBody2D3" parent="Pegs/Hrow3" instance=ExtResource( 6 )]
+position = Vector2( 103, 386.695 )
+
+[node name="RigidBody2D4" parent="Pegs/Hrow3" instance=ExtResource( 6 )]
+position = Vector2( 170, 362.713 )
+script = ExtResource( 7 )
+
+[node name="RigidBody2D5" parent="Pegs/Hrow3" instance=ExtResource( 6 )]
+position = Vector2( 243, 386.695 )
+
+[node name="RigidBody2D6" parent="Pegs/Hrow3" instance=ExtResource( 6 )]
+position = Vector2( 312, 362.713 )
+script = ExtResource( 7 )
+
+[node name="RigidBody2D7" parent="Pegs/Hrow3" instance=ExtResource( 6 )]
+position = Vector2( 386, 386.695 )
+
+[node name="RigidBody2D8" parent="Pegs/Hrow3" instance=ExtResource( 6 )]
+position = Vector2( 460, 362.713 )
+script = ExtResource( 7 )
+
+[node name="RigidBody2D9" parent="Pegs/Hrow3" instance=ExtResource( 6 )]
+position = Vector2( 533, 386.695 )
+
+[node name="RigidBody2D10" parent="Pegs/Hrow3" instance=ExtResource( 6 )]
+position = Vector2( 606, 362.713 )
+script = ExtResource( 7 )
+
+[node name="RigidBody2D11" parent="Pegs/Hrow3" instance=ExtResource( 6 )]
+position = Vector2( 678, 386.695 )
+
+[node name="RigidBody2D12" parent="Pegs/Hrow3" instance=ExtResource( 6 )]
+position = Vector2( 749, 362.713 )
+script = ExtResource( 7 )
+
+[node name="RigidBody2D13" parent="Pegs/Hrow3" instance=ExtResource( 6 )]
+position = Vector2( 815, 386.695 )
+
+[node name="RigidBody2D14" parent="Pegs/Hrow3" instance=ExtResource( 6 )]
+position = Vector2( 890, 362.713 )
+script = ExtResource( 7 )
+
+[node name="RigidBody2D15" parent="Pegs/Hrow3" instance=ExtResource( 6 )]
+position = Vector2( 958, 386.695 )
+
+[node name="Hrow4" type="Node2D" parent="Pegs"]
+script = ExtResource( 8 )
+
+[node name="RigidBody2D2" parent="Pegs/Hrow4" instance=ExtResource( 6 )]
+position = Vector2( 18, 458.638 )
+script = ExtResource( 7 )
+
+[node name="RigidBody2D3" parent="Pegs/Hrow4" instance=ExtResource( 6 )]
+position = Vector2( 79, 482.619 )
+
+[node name="RigidBody2D4" parent="Pegs/Hrow4" instance=ExtResource( 6 )]
+position = Vector2( 146, 458.638 )
+script = ExtResource( 7 )
+
+[node name="RigidBody2D5" parent="Pegs/Hrow4" instance=ExtResource( 6 )]
+position = Vector2( 219, 482.619 )
+
+[node name="RigidBody2D6" parent="Pegs/Hrow4" instance=ExtResource( 6 )]
+position = Vector2( 288, 458.638 )
+script = ExtResource( 7 )
+
+[node name="RigidBody2D7" parent="Pegs/Hrow4" instance=ExtResource( 6 )]
+position = Vector2( 362, 482.619 )
+
+[node name="RigidBody2D8" parent="Pegs/Hrow4" instance=ExtResource( 6 )]
+position = Vector2( 436, 458.638 )
+script = ExtResource( 7 )
+
+[node name="RigidBody2D9" parent="Pegs/Hrow4" instance=ExtResource( 6 )]
+position = Vector2( 509, 482.619 )
+
+[node name="RigidBody2D10" parent="Pegs/Hrow4" instance=ExtResource( 6 )]
+position = Vector2( 582, 458.638 )
+script = ExtResource( 7 )
+
+[node name="RigidBody2D11" parent="Pegs/Hrow4" instance=ExtResource( 6 )]
+position = Vector2( 654, 482.619 )
+
+[node name="RigidBody2D12" parent="Pegs/Hrow4" instance=ExtResource( 6 )]
+position = Vector2( 725, 458.638 )
+script = ExtResource( 7 )
+
+[node name="RigidBody2D13" parent="Pegs/Hrow4" instance=ExtResource( 6 )]
+position = Vector2( 791, 482.619 )
+
+[node name="RigidBody2D14" parent="Pegs/Hrow4" instance=ExtResource( 6 )]
+position = Vector2( 866, 458.638 )
+script = ExtResource( 7 )
+
+[node name="RigidBody2D15" parent="Pegs/Hrow4" instance=ExtResource( 6 )]
+position = Vector2( 934, 482.619 )
+
+[node name="Crow1" type="Node2D" parent="Pegs"]
+script = ExtResource( 10 )
+
+[node name="Center" type="Position2D" parent="Pegs/Crow1"]
+position = Vector2( 159, 258.796 )
+
+[node name="RigidBody2D" parent="Pegs/Crow1/Center" instance=ExtResource( 6 )]
+position = Vector2( -43, -47.9621 )
+
+[node name="RigidBody2D2" parent="Pegs/Crow1/Center" instance=ExtResource( 6 )]
+position = Vector2( 38, -47.9621 )
+
+[node name="RigidBody2D3" parent="Pegs/Crow1/Center" instance=ExtResource( 6 )]
+position = Vector2( -43, 39.9684 )
+
+[node name="RigidBody2D4" parent="Pegs/Crow1/Center" instance=ExtResource( 6 )]
+position = Vector2( 38, 39.9684 )
+
+[node name="Crow2" type="Node2D" parent="Pegs"]
+script = ExtResource( 10 )
+
+[node name="Center" type="Position2D" parent="Pegs/Crow2"]
+position = Vector2( 362, 258.796 )
+
+[node name="RigidBody2D" parent="Pegs/Crow2/Center" instance=ExtResource( 6 )]
+position = Vector2( -43, -47.9621 )
+
+[node name="RigidBody2D2" parent="Pegs/Crow2/Center" instance=ExtResource( 6 )]
+position = Vector2( 38, -47.9621 )
+
+[node name="RigidBody2D3" parent="Pegs/Crow2/Center" instance=ExtResource( 6 )]
+position = Vector2( -43, 39.9684 )
+
+[node name="RigidBody2D4" parent="Pegs/Crow2/Center" instance=ExtResource( 6 )]
+position = Vector2( 38, 39.9684 )
+
+[node name="Crow3" type="Node2D" parent="Pegs"]
+script = ExtResource( 10 )
+
+[node name="Center" type="Position2D" parent="Pegs/Crow3"]
+position = Vector2( 578, 258.796 )
+
+[node name="RigidBody2D" parent="Pegs/Crow3/Center" instance=ExtResource( 6 )]
+position = Vector2( -43, -47.9621 )
+
+[node name="RigidBody2D2" parent="Pegs/Crow3/Center" instance=ExtResource( 6 )]
+position = Vector2( 38, -47.9621 )
+
+[node name="RigidBody2D3" parent="Pegs/Crow3/Center" instance=ExtResource( 6 )]
+position = Vector2( -43, 39.9684 )
+
+[node name="RigidBody2D4" parent="Pegs/Crow3/Center" instance=ExtResource( 6 )]
+position = Vector2( 38, 39.9684 )
+
+[node name="Crow4" type="Node2D" parent="Pegs"]
+script = ExtResource( 10 )
+
+[node name="Center" type="Position2D" parent="Pegs/Crow4"]
+position = Vector2( 786, 258.796 )
+
+[node name="RigidBody2D" parent="Pegs/Crow4/Center" instance=ExtResource( 6 )]
+position = Vector2( -43, -47.9621 )
+
+[node name="RigidBody2D2" parent="Pegs/Crow4/Center" instance=ExtResource( 6 )]
+position = Vector2( 38, -47.9621 )
+
+[node name="RigidBody2D3" parent="Pegs/Crow4/Center" instance=ExtResource( 6 )]
+position = Vector2( -43, 39.9684 )
+
+[node name="RigidBody2D4" parent="Pegs/Crow4/Center" instance=ExtResource( 6 )]
+position = Vector2( 38, 39.9684 )
+
+[connection signal="gui_input" from="." to="." method="_on_GameSpace_gui_input"]
