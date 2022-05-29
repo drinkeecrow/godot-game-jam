@@ -13,6 +13,10 @@ config_version=4
 config/name="Godot Game Jam"
 run/main_scene="res://World.tscn"
 
+[autoload]
+
+GlobalSettings="*res://Src/global_settings.gd"
+
 [display]
 
 window/size/width=1280
