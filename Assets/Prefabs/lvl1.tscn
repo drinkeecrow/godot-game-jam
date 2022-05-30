@@ -1,0 +1,292 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Images/background2.png" type="Texture" id=1]
+[ext_resource path="res://World1Controller.gd" type="Script" id=2]
+[ext_resource path="res://MoveChildrenCircle.gd" type="Script" id=3]
+[ext_resource path="res://MoveChildrenHorizontal.gd" type="Script" id=4]
+[ext_resource path="res://Assets/Prefabs/Peg.tscn" type="PackedScene" id=5]
+
+[node name="Pegs" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Hrow1" type="Node2D" parent="."]
+script = ExtResource( 4 )
+
+[node name="RigidBody2D2" parent="Hrow1" instance=ExtResource( 5 )]
+position = Vector2( 42, 42.966 )
+
+[node name="RigidBody2D3" parent="Hrow1" instance=ExtResource( 5 )]
+position = Vector2( 103, 66.9471 )
+
+[node name="RigidBody2D4" parent="Hrow1" instance=ExtResource( 5 )]
+position = Vector2( 170, 42.9661 )
+
+[node name="RigidBody2D5" parent="Hrow1" instance=ExtResource( 5 )]
+position = Vector2( 243, 66.9471 )
+
+[node name="RigidBody2D6" parent="Hrow1" instance=ExtResource( 5 )]
+position = Vector2( 312, 42.966 )
+
+[node name="RigidBody2D7" parent="Hrow1" instance=ExtResource( 5 )]
+position = Vector2( 386, 66.9471 )
+
+[node name="RigidBody2D8" parent="Hrow1" instance=ExtResource( 5 )]
+position = Vector2( 460, 42.9661 )
+
+[node name="RigidBody2D9" parent="Hrow1" instance=ExtResource( 5 )]
+position = Vector2( 533, 66.9471 )
+
+[node name="RigidBody2D10" parent="Hrow1" instance=ExtResource( 5 )]
+position = Vector2( 606, 42.966 )
+
+[node name="RigidBody2D11" parent="Hrow1" instance=ExtResource( 5 )]
+position = Vector2( 678, 66.9471 )
+
+[node name="RigidBody2D12" parent="Hrow1" instance=ExtResource( 5 )]
+position = Vector2( 749, 42.9661 )
+
+[node name="RigidBody2D13" parent="Hrow1" instance=ExtResource( 5 )]
+position = Vector2( 815, 66.9471 )
+
+[node name="RigidBody2D14" parent="Hrow1" instance=ExtResource( 5 )]
+position = Vector2( 890, 42.966 )
+
+[node name="RigidBody2D15" parent="Hrow1" instance=ExtResource( 5 )]
+position = Vector2( 958, 66.9471 )
+
+[node name="Left" type="Position2D" parent="Hrow1"]
+position = Vector2( 16, 43 )
+
+[node name="Right" type="Position2D" parent="Hrow1"]
+position = Vector2( 971, 43 )
+
+[node name="Hrow2" type="Node2D" parent="."]
+script = ExtResource( 4 )
+
+[node name="RigidBody2D2" parent="Hrow2" instance=ExtResource( 5 )]
+position = Vector2( 18, 130.897 )
+
+[node name="RigidBody2D3" parent="Hrow2" instance=ExtResource( 5 )]
+position = Vector2( 79, 154.878 )
+
+[node name="RigidBody2D4" parent="Hrow2" instance=ExtResource( 5 )]
+position = Vector2( 146, 130.897 )
+
+[node name="RigidBody2D5" parent="Hrow2" instance=ExtResource( 5 )]
+position = Vector2( 219, 154.878 )
+
+[node name="RigidBody2D6" parent="Hrow2" instance=ExtResource( 5 )]
+position = Vector2( 288, 130.897 )
+
+[node name="RigidBody2D7" parent="Hrow2" instance=ExtResource( 5 )]
+position = Vector2( 362, 154.878 )
+
+[node name="RigidBody2D8" parent="Hrow2" instance=ExtResource( 5 )]
+position = Vector2( 436, 130.897 )
+
+[node name="RigidBody2D9" parent="Hrow2" instance=ExtResource( 5 )]
+position = Vector2( 509, 154.878 )
+
+[node name="RigidBody2D10" parent="Hrow2" instance=ExtResource( 5 )]
+position = Vector2( 582, 130.897 )
+
+[node name="RigidBody2D11" parent="Hrow2" instance=ExtResource( 5 )]
+position = Vector2( 654, 154.878 )
+
+[node name="RigidBody2D12" parent="Hrow2" instance=ExtResource( 5 )]
+position = Vector2( 725, 130.897 )
+
+[node name="RigidBody2D13" parent="Hrow2" instance=ExtResource( 5 )]
+position = Vector2( 791, 154.878 )
+
+[node name="RigidBody2D14" parent="Hrow2" instance=ExtResource( 5 )]
+position = Vector2( 866, 130.897 )
+
+[node name="RigidBody2D15" parent="Hrow2" instance=ExtResource( 5 )]
+position = Vector2( 934, 154.878 )
+
+[node name="Left" type="Position2D" parent="Hrow2"]
+position = Vector2( 16, 131 )
+
+[node name="Right" type="Position2D" parent="Hrow2"]
+position = Vector2( 971, 131 )
+
+[node name="Hrow3" type="Node2D" parent="."]
+script = ExtResource( 4 )
+
+[node name="RigidBody2D2" parent="Hrow3" instance=ExtResource( 5 )]
+position = Vector2( 42, 362.713 )
+
+[node name="RigidBody2D3" parent="Hrow3" instance=ExtResource( 5 )]
+position = Vector2( 103, 386.695 )
+
+[node name="RigidBody2D4" parent="Hrow3" instance=ExtResource( 5 )]
+position = Vector2( 170, 362.713 )
+
+[node name="RigidBody2D5" parent="Hrow3" instance=ExtResource( 5 )]
+position = Vector2( 243, 386.695 )
+
+[node name="RigidBody2D6" parent="Hrow3" instance=ExtResource( 5 )]
+position = Vector2( 312, 362.713 )
+
+[node name="RigidBody2D7" parent="Hrow3" instance=ExtResource( 5 )]
+position = Vector2( 386, 386.695 )
+
+[node name="RigidBody2D8" parent="Hrow3" instance=ExtResource( 5 )]
+position = Vector2( 460, 362.713 )
+
+[node name="RigidBody2D9" parent="Hrow3" instance=ExtResource( 5 )]
+position = Vector2( 533, 386.695 )
+
+[node name="RigidBody2D10" parent="Hrow3" instance=ExtResource( 5 )]
+position = Vector2( 606, 362.713 )
+
+[node name="RigidBody2D11" parent="Hrow3" instance=ExtResource( 5 )]
+position = Vector2( 678, 386.695 )
+
+[node name="RigidBody2D12" parent="Hrow3" instance=ExtResource( 5 )]
+position = Vector2( 749, 362.713 )
+
+[node name="RigidBody2D13" parent="Hrow3" instance=ExtResource( 5 )]
+position = Vector2( 815, 386.695 )
+
+[node name="RigidBody2D14" parent="Hrow3" instance=ExtResource( 5 )]
+position = Vector2( 890, 362.713 )
+
+[node name="RigidBody2D15" parent="Hrow3" instance=ExtResource( 5 )]
+position = Vector2( 958, 386.695 )
+
+[node name="Left" type="Position2D" parent="Hrow3"]
+position = Vector2( 16, 363 )
+
+[node name="Right" type="Position2D" parent="Hrow3"]
+position = Vector2( 971, 363 )
+
+[node name="Hrow4" type="Node2D" parent="."]
+script = ExtResource( 4 )
+
+[node name="RigidBody2D2" parent="Hrow4" instance=ExtResource( 5 )]
+position = Vector2( 18, 458.638 )
+
+[node name="RigidBody2D3" parent="Hrow4" instance=ExtResource( 5 )]
+position = Vector2( 79, 482.619 )
+
+[node name="RigidBody2D4" parent="Hrow4" instance=ExtResource( 5 )]
+position = Vector2( 146, 458.638 )
+
+[node name="RigidBody2D5" parent="Hrow4" instance=ExtResource( 5 )]
+position = Vector2( 219, 482.619 )
+
+[node name="RigidBody2D6" parent="Hrow4" instance=ExtResource( 5 )]
+position = Vector2( 288, 458.638 )
+
+[node name="RigidBody2D7" parent="Hrow4" instance=ExtResource( 5 )]
+position = Vector2( 362, 482.619 )
+
+[node name="RigidBody2D8" parent="Hrow4" instance=ExtResource( 5 )]
+position = Vector2( 436, 458.638 )
+
+[node name="RigidBody2D9" parent="Hrow4" instance=ExtResource( 5 )]
+position = Vector2( 509, 482.619 )
+
+[node name="RigidBody2D10" parent="Hrow4" instance=ExtResource( 5 )]
+position = Vector2( 582, 458.638 )
+
+[node name="RigidBody2D11" parent="Hrow4" instance=ExtResource( 5 )]
+position = Vector2( 654, 482.619 )
+
+[node name="RigidBody2D12" parent="Hrow4" instance=ExtResource( 5 )]
+position = Vector2( 725, 458.638 )
+
+[node name="RigidBody2D13" parent="Hrow4" instance=ExtResource( 5 )]
+position = Vector2( 791, 482.619 )
+
+[node name="RigidBody2D14" parent="Hrow4" instance=ExtResource( 5 )]
+position = Vector2( 866, 458.638 )
+
+[node name="RigidBody2D15" parent="Hrow4" instance=ExtResource( 5 )]
+position = Vector2( 934, 482.619 )
+
+[node name="Left" type="Position2D" parent="Hrow4"]
+position = Vector2( 16, 459 )
+
+[node name="Right" type="Position2D" parent="Hrow4"]
+position = Vector2( 971, 459 )
+
+[node name="Crow1" type="Node2D" parent="."]
+script = ExtResource( 3 )
+
+[node name="Center" type="Position2D" parent="Crow1"]
+position = Vector2( 159, 258.796 )
+
+[node name="RigidBody2D" parent="Crow1/Center" instance=ExtResource( 5 )]
+position = Vector2( -43, -47.9621 )
+
+[node name="RigidBody2D2" parent="Crow1/Center" instance=ExtResource( 5 )]
+position = Vector2( 38, -47.9621 )
+
+[node name="RigidBody2D3" parent="Crow1/Center" instance=ExtResource( 5 )]
+position = Vector2( -43, 39.9684 )
+
+[node name="RigidBody2D4" parent="Crow1/Center" instance=ExtResource( 5 )]
+position = Vector2( 38, 39.9684 )
+
+[node name="Crow2" type="Node2D" parent="."]
+script = ExtResource( 3 )
+
+[node name="Center" type="Position2D" parent="Crow2"]
+position = Vector2( 362, 258.796 )
+
+[node name="RigidBody2D" parent="Crow2/Center" instance=ExtResource( 5 )]
+position = Vector2( -43, -47.9621 )
+
+[node name="RigidBody2D2" parent="Crow2/Center" instance=ExtResource( 5 )]
+position = Vector2( 38, -47.9621 )
+
+[node name="RigidBody2D3" parent="Crow2/Center" instance=ExtResource( 5 )]
+position = Vector2( -43, 39.9684 )
+
+[node name="RigidBody2D4" parent="Crow2/Center" instance=ExtResource( 5 )]
+position = Vector2( 38, 39.9684 )
+
+[node name="Crow3" type="Node2D" parent="."]
+script = ExtResource( 3 )
+
+[node name="Center" type="Position2D" parent="Crow3"]
+position = Vector2( 578, 258.796 )
+
+[node name="RigidBody2D" parent="Crow3/Center" instance=ExtResource( 5 )]
+position = Vector2( -43, -47.9621 )
+
+[node name="RigidBody2D2" parent="Crow3/Center" instance=ExtResource( 5 )]
+position = Vector2( 38, -47.9621 )
+
+[node name="RigidBody2D3" parent="Crow3/Center" instance=ExtResource( 5 )]
+position = Vector2( -43, 39.9684 )
+
+[node name="RigidBody2D4" parent="Crow3/Center" instance=ExtResource( 5 )]
+position = Vector2( 38, 39.9684 )
+
+[node name="Crow4" type="Node2D" parent="."]
+position = Vector2( 82, 154.878 )
+script = ExtResource( 3 )
+
+[node name="Center" type="Position2D" parent="Crow4"]
+position = Vector2( 722, 103.918 )
+
+[node name="RigidBody2D" parent="Crow4/Center" instance=ExtResource( 5 )]
+position = Vector2( -43, -47.9621 )
+
+[node name="RigidBody2D2" parent="Crow4/Center" instance=ExtResource( 5 )]
+position = Vector2( 38, -47.9621 )
+
+[node name="RigidBody2D3" parent="Crow4/Center" instance=ExtResource( 5 )]
+position = Vector2( -43, 39.9684 )
+
+[node name="RigidBody2D4" parent="Crow4/Center" instance=ExtResource( 5 )]
+position = Vector2( 38, 39.9684 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 493, 293 )
+z_index = -1
+texture = ExtResource( 1 )

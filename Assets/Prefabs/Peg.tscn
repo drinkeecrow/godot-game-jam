@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://CollisionShapes/pegShape.tres" type="Shape2D" id=1]
-[ext_resource path="res://Assets/Images/amobia.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Images/blackBall.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Prefabs/BounceDebug.gd" type="Script" id=3]
 [ext_resource path="res://CollisionShapes/pegCollisionShape.tres" type="Shape2D" id=4]
 
@@ -24,6 +24,8 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 scale = Vector2( 1.16, 1.16 )
 shape = ExtResource( 4 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
