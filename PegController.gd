@@ -46,6 +46,7 @@ func _on_Button_pressed():
 	self.add_child((instance))
 	pegsName = instance.name
 	var binstance = ball.instance()
+	binstance.position = Vector2(0,100)
 	self.get_parent().add_child(binstance)
 	ballName = binstance.name
 	
@@ -58,5 +59,6 @@ func _on_Button2_pressed():
 	self.add_child((instance))
 	pegsName = instance.name
 	var binstance = ball.instance()
+	binstance.position = Vector2(0,50)
 	self.get_parent().add_child(binstance)
 	ballName = binstance.name
