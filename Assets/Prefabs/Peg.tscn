@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://CollisionShapes/pegShape.tres" type="Shape2D" id=1]
-[ext_resource path="res://Assets/Images/amobia.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Images/blackBall.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Prefabs/BounceDebug.gd" type="Script" id=3]
 [ext_resource path="res://CollisionShapes/pegCollisionShape.tres" type="Shape2D" id=4]
 
