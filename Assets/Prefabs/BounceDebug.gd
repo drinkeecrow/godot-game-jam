@@ -6,6 +6,11 @@ extends KinematicBody2D
 # var b = "text"
 var ball = preload("res://Assets/Prefabs/Ballmeba.tscn")
 var floaty = preload("res://Assets/Prefabs/floatyText.tscn")
+
+var hitSound1 = preload("res://Assets/fruit1.wav")
+var hitSound2 = preload("res://Assets/fruit2.wav")
+var hitSound3 = preload("res://Assets/fruit3.wav")
+
 var canSpawn = true
 export var hMove = 0;
 export var vMove = 1000;
@@ -27,7 +32,6 @@ func _physics_process(delta):
 
 func _on_Area2D_body_entered(body):
 	if not body == self:
-		print("Boing")
 		var instance = floaty.instance()
 		hits += 1
 		instance.set_text("+" + str(hits))
@@ -38,7 +42,17 @@ func _on_Area2D_body_entered(body):
 		var red = self.get_node("Sprite").get_modulate().r
 		self.get_node("Sprite").modulate = Color(red+0.2,1,1)
 		self.get_tree().get_root().get_node("World").get_node("Score").add_score(hits)
-		
+		if not $AudioStreamPlayer2D.is_playing():
+			var rng = RandomNumberGenerator.new()
+			rng.randomize()
+			var rndSound = rng.randi_range(1,3)
+			if rndSound == 1:
+				$AudioStreamPlayer2D.stream = hitSound1
+			if rndSound == 2:
+				$AudioStreamPlayer2D.stream = hitSound2
+			if rndSound == 3:
+				$AudioStreamPlayer2D.stream = hitSound3
+			$AudioStreamPlayer2D.play()
 #		if self.canSpawn:
 #			var instance = ball.instance()
 	#			#instance.position.x = body.get_parent().position.x +30

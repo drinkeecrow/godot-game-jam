@@ -51,7 +51,7 @@ position = Vector2( 755, 18.985 )
 position = Vector2( 864, 18.985 )
 
 [node name="BotWall10" parent="ScoreArea" instance=ExtResource( 3 )]
-position = Vector2( 970, 18.985 )
+position = Vector2( 971, 18.985 )
 
 [node name="ScoreBoxes" type="Node2D" parent="ScoreArea"]
 
