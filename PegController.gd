@@ -31,7 +31,7 @@ func _ready():
 #	pass
 
 
-func _on_GameSpace_gui_input(event):
+func _on_GameSpace_gui_input(_event):
 	pass
 #	if event is InputEventMouseButton and event.is_pressed():
 #		var ball = get_node("Ballmeba/RigidBody2D")

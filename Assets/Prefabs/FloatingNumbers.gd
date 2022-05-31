@@ -15,7 +15,7 @@ func _ready():
 
 	tween.interpolate_property(self, "scale", Vector2(0,0), Vector2(1.0, 1.0), 0.3, Tween.TRANS_QUART, Tween.EASE_OUT)
 	tween.interpolate_property(self, "scale", Vector2(1.0,1.0), Vector2(0.4, 0.4), 1.0, Tween.TRANS_LINEAR, Tween.EASE_OUT, 0.6)
-	tween.interpolate_callback(self, 1.0, "destroy")
+	#tween.interpolate_callback(self, 1.0, "destroy")
 	
 	tween.start()
 # Called every frame. 'delta' is the elapsed time since the previous frame.

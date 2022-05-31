@@ -17,3 +17,7 @@ func _ready():
 func _on_ScoreBox1_body_entered(body):
 	if body is RigidBody2D:
 		print("Multi " + body.name + " " + str(multi))
+
+
+func _on_BotWall2_body_entered(body):
+	pass # Replace with function body.
