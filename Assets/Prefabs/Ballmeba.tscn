@@ -4,8 +4,8 @@
 [ext_resource path="res://Assets/Prefabs/BallControl.gd" type="Script" id=2]
 
 [sub_resource type="PhysicsMaterial" id=2]
-friction = 0.32
-bounce = 0.52
+friction = 0.61
+bounce = 1.0
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 17.1172
@@ -26,3 +26,5 @@ texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
 shape = SubResource( 1 )
+
+[node name="Upgrades" type="Node2D" parent="."]
