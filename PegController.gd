@@ -38,25 +38,30 @@ func _on_GameSpace_gui_input(_event):
 #		ball.apply_central_impulse(ball.get_parent().position.direction_to(event.position)*100)
 #		print(str(event.position.x) + ' ' + str(event.position.y))
 
+func freeballs():
+	var balls = get_tree().get_nodes_in_group("balls")
+	for ball in balls:
+		ball.queue_free()
+		
 
 func _on_Button_pressed():
 	get_node(pegsName).queue_free()
-	self.get_parent().get_node(ballName).queue_free()
+	freeballs()	
 	var instance = lvl1.instance()
 	self.add_child((instance))
 	pegsName = instance.name
 	var binstance = ball.instance()
-	self.get_parent().add_child(binstance)
+	self.get_parent().get_node("TopMargin").add_child(binstance)
 	ballName = binstance.name
 	
 
 
 func _on_Button2_pressed():
 	get_node(pegsName).queue_free()
-	self.get_parent().get_node(ballName).queue_free()
+	freeballs()
 	var instance = lvl2.instance()
 	self.add_child((instance))
 	pegsName = instance.name
 	var binstance = ball.instance()
-	self.get_parent().add_child(binstance)
+	self.get_parent().get_node("TopMargin").add_child(binstance)
 	ballName = binstance.name

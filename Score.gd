@@ -16,6 +16,10 @@ func get_score():
 func add_score(num):
 	score += num
 	self.text = "SCORE: " + str(score)
+	
+func multiply_score(factor):
+	score = score * factor
+	self.text = "SCORE: " + str(score)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

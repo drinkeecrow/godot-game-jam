@@ -26,7 +26,7 @@ func _ball_hit(body):
 #				instance.get_node("Upgrades").remove_child(n)
 #				n.queue_free()
 
-			get_tree().get_root().get_node("World").add_child(instance)
+			get_tree().get_root().get_node("World/TopMargin").add_child(instance)
 			hits=0
 		else:
 			hits += 1

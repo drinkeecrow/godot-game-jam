@@ -6,11 +6,12 @@ extends RigidBody2D
 # var b = "text"
 var state = "idle"
 var score = 0
-var speed = 1
+var speed = 3.0
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	self.add_to_group("balls")
 	state = "incubating"
 	pass # Replace with function body.
 
@@ -27,7 +28,7 @@ func _input(event):
 func _physics_process(delta):
 	var mouse = get_local_mouse_position()
 	var tstep = 0.0
-	tstep += delta * 2.0
+	tstep += delta * speed
 	if state == "incubating":
 		gravity_scale = 0.0
 		self.position = self.position.linear_interpolate(mouse + self.position, tstep)
