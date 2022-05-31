@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets/Images/ballmeba.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Prefabs/BallControl.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Prefabs/BallUpgrades/reproduction.tscn" type="PackedScene" id=3]
 
 [sub_resource type="PhysicsMaterial" id=2]
 friction = 0.61
@@ -28,3 +29,5 @@ texture = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="Upgrades" type="Node2D" parent="."]
+
+[node name="Reproduction" parent="Upgrades" instance=ExtResource( 3 )]
