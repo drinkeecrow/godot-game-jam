@@ -11,6 +11,7 @@ bounce = 0.52
 radius = 17.1172
 
 [node name="Ballmeba" type="Node2D"]
+z_as_relative = false
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
 mass = 0.433673
@@ -18,7 +19,6 @@ physics_material_override = SubResource( 2 )
 contacts_reported = 2
 contact_monitor = true
 linear_velocity = Vector2( 4, 0 )
-applied_force = Vector2( 0, 50 )
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="RigidBody2D"]

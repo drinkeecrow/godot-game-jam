@@ -39,7 +39,7 @@ text = "test"
 script = ExtResource( 4 )
 
 [node name="Ballmeba" parent="." instance=ExtResource( 5 )]
-position = Vector2( 296, -280 )
+position = Vector2( -200, -318 )
 
 [node name="Button" type="Button" parent="."]
 margin_left = -592.0
