@@ -16,9 +16,8 @@ onready var sfx_vol_val = $settingsTabs/Audio/audioTabContainer/audioSettingsGri
 
 #Control Settings - not implemented
 
-func _ready():
+#func _ready():
 #	popup_centered()
-
 
 #Video Settings Signals
 func _on_displayOptionButton_item_selected(index):
