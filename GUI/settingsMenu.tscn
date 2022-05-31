@@ -1,11 +1,13 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://GUI/settingsMenu.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Custom Fonts/settingsMenu_30.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Assets/Images/Close.png" type="Texture" id=3]
 
 [sub_resource type="Theme" id=1]
 
 [node name="settingsMenu" type="Popup"]
+visible = true
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -24,6 +26,17 @@ rect_min_size = Vector2( 960, 540 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 color = Color( 0.211765, 0.0117647, 0.333333, 1 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -22.0
+margin_top = 2.0
+margin_right = -2.0
+margin_bottom = 22.0
+rect_min_size = Vector2( 20, 20 )
+texture = ExtResource( 3 )
+stretch_mode = 1
 
 [node name="settingsTabs" type="TabContainer" parent="."]
 anchor_right = 1.0
@@ -57,15 +70,15 @@ custom_constants/vseparation = 6
 columns = 2
 
 [node name="masterVolLabel" type="Label" parent="settingsTabs/Audio/audioTabContainer/audioSettingsGrid"]
-margin_right = 220.0
-margin_bottom = 42.0
+margin_right = 352.0
+margin_bottom = 67.0
 custom_fonts/font = ExtResource( 2 )
 text = "Master Volume"
 
 [node name="masterVolSlider" type="HSlider" parent="settingsTabs/Audio/audioTabContainer/audioSettingsGrid"]
 margin_left = 442.0
 margin_right = 892.0
-margin_bottom = 42.0
+margin_bottom = 67.0
 rect_min_size = Vector2( 450, 0 )
 size_flags_horizontal = 10
 size_flags_vertical = 1
@@ -74,17 +87,17 @@ max_value = 0.0
 value = -10.0
 
 [node name="musicVolLabel" type="Label" parent="settingsTabs/Audio/audioTabContainer/audioSettingsGrid"]
-margin_top = 48.0
-margin_right = 220.0
-margin_bottom = 90.0
+margin_top = 73.0
+margin_right = 352.0
+margin_bottom = 140.0
 custom_fonts/font = ExtResource( 2 )
 text = "Music Volume"
 
 [node name="musicVolSlider" type="HSlider" parent="settingsTabs/Audio/audioTabContainer/audioSettingsGrid"]
 margin_left = 442.0
-margin_top = 48.0
+margin_top = 73.0
 margin_right = 892.0
-margin_bottom = 90.0
+margin_bottom = 140.0
 rect_min_size = Vector2( 450, 0 )
 size_flags_horizontal = 10
 size_flags_vertical = 1
@@ -93,17 +106,17 @@ max_value = 0.0
 value = -10.0
 
 [node name="sfxVolLabel" type="Label" parent="settingsTabs/Audio/audioTabContainer/audioSettingsGrid"]
-margin_top = 96.0
-margin_right = 220.0
-margin_bottom = 138.0
+margin_top = 146.0
+margin_right = 352.0
+margin_bottom = 213.0
 custom_fonts/font = ExtResource( 2 )
 text = "Effects Volume"
 
 [node name="sfxVolSlider" type="HSlider" parent="settingsTabs/Audio/audioTabContainer/audioSettingsGrid"]
 margin_left = 442.0
-margin_top = 96.0
+margin_top = 146.0
 margin_right = 892.0
-margin_bottom = 138.0
+margin_bottom = 213.0
 rect_min_size = Vector2( 450, 0 )
 size_flags_horizontal = 10
 size_flags_vertical = 1
@@ -139,15 +152,15 @@ columns = 2
 
 [node name="displayModeLabel" type="Label" parent="settingsTabs/Video/videoTabContainer/videoSettingsGrid"]
 margin_top = 3.0
-margin_right = 195.0
-margin_bottom = 45.0
+margin_right = 311.0
+margin_bottom = 70.0
 custom_fonts/font = ExtResource( 2 )
 text = "Display Mode"
 
 [node name="displayOptionButton" type="OptionButton" parent="settingsTabs/Video/videoTabContainer/videoSettingsGrid"]
-margin_left = 716.0
+margin_left = 625.0
 margin_right = 892.0
-margin_bottom = 48.0
+margin_bottom = 73.0
 size_flags_horizontal = 10
 custom_fonts/font = ExtResource( 2 )
 text = "Fullscreen"
@@ -155,58 +168,58 @@ items = [ "Windowed", null, false, 0, null, "Fullscreen", null, false, 1, null ]
 selected = 1
 
 [node name="vSyncLabel" type="Label" parent="settingsTabs/Video/videoTabContainer/videoSettingsGrid"]
-margin_top = 54.0
-margin_right = 195.0
-margin_bottom = 96.0
+margin_top = 79.0
+margin_right = 311.0
+margin_bottom = 146.0
 custom_fonts/font = ExtResource( 2 )
 text = "vSync"
 
 [node name="vSyncToggleButton" type="CheckButton" parent="settingsTabs/Video/videoTabContainer/videoSettingsGrid"]
 margin_left = 816.0
-margin_top = 54.0
+margin_top = 79.0
 margin_right = 892.0
-margin_bottom = 96.0
+margin_bottom = 146.0
 size_flags_horizontal = 10
 
 [node name="displayFpsLabel" type="Label" parent="settingsTabs/Video/videoTabContainer/videoSettingsGrid"]
-margin_top = 102.0
-margin_right = 195.0
-margin_bottom = 144.0
+margin_top = 152.0
+margin_right = 311.0
+margin_bottom = 219.0
 custom_fonts/font = ExtResource( 2 )
 text = "Display FPS"
 
 [node name="fpsToggleButton" type="CheckButton" parent="settingsTabs/Video/videoTabContainer/videoSettingsGrid"]
 margin_left = 816.0
-margin_top = 102.0
+margin_top = 152.0
 margin_right = 892.0
-margin_bottom = 144.0
+margin_bottom = 219.0
 size_flags_horizontal = 10
 
 [node name="maxFpsLabel" type="Label" parent="settingsTabs/Video/videoTabContainer/videoSettingsGrid"]
-margin_top = 150.0
-margin_right = 195.0
-margin_bottom = 192.0
+margin_top = 225.0
+margin_right = 311.0
+margin_bottom = 292.0
 custom_fonts/font = ExtResource( 2 )
 text = "Max FPS"
 
 [node name="fpsSliderContainer" type="HBoxContainer" parent="settingsTabs/Video/videoTabContainer/videoSettingsGrid"]
-margin_left = 199.0
-margin_top = 150.0
+margin_left = 315.0
+margin_top = 225.0
 margin_right = 892.0
-margin_bottom = 192.0
+margin_bottom = 292.0
 
 [node name="fpsValueLabel" type="Label" parent="settingsTabs/Video/videoTabContainer/videoSettingsGrid/fpsSliderContainer"]
-margin_left = 177.0
-margin_right = 239.0
-margin_bottom = 42.0
+margin_left = 25.0
+margin_right = 123.0
+margin_bottom = 67.0
 size_flags_horizontal = 10
 custom_fonts/font = ExtResource( 2 )
 text = "Max"
 
 [node name="fpsSlider" type="HSlider" parent="settingsTabs/Video/videoTabContainer/videoSettingsGrid/fpsSliderContainer"]
-margin_left = 243.0
-margin_right = 693.0
-margin_bottom = 42.0
+margin_left = 127.0
+margin_right = 577.0
+margin_bottom = 67.0
 rect_min_size = Vector2( 450, 0 )
 size_flags_horizontal = 11
 size_flags_vertical = 1
@@ -215,31 +228,31 @@ max_value = 500.0
 value = 500.0
 
 [node name="bloomLabel" type="Label" parent="settingsTabs/Video/videoTabContainer/videoSettingsGrid"]
-margin_top = 198.0
-margin_right = 195.0
-margin_bottom = 240.0
+margin_top = 298.0
+margin_right = 311.0
+margin_bottom = 365.0
 custom_fonts/font = ExtResource( 2 )
 text = "Bloom"
 
 [node name="bloomToggleButton" type="CheckButton" parent="settingsTabs/Video/videoTabContainer/videoSettingsGrid"]
 margin_left = 816.0
-margin_top = 198.0
+margin_top = 298.0
 margin_right = 892.0
-margin_bottom = 240.0
+margin_bottom = 365.0
 size_flags_horizontal = 10
 
 [node name="brightnessLabel" type="Label" parent="settingsTabs/Video/videoTabContainer/videoSettingsGrid"]
-margin_top = 246.0
-margin_right = 195.0
-margin_bottom = 288.0
+margin_top = 371.0
+margin_right = 311.0
+margin_bottom = 438.0
 custom_fonts/font = ExtResource( 2 )
 text = "Brightness"
 
 [node name="brightnessSlider" type="HSlider" parent="settingsTabs/Video/videoTabContainer/videoSettingsGrid"]
 margin_left = 442.0
-margin_top = 246.0
+margin_top = 371.0
 margin_right = 892.0
-margin_bottom = 288.0
+margin_bottom = 438.0
 rect_min_size = Vector2( 450, 0 )
 size_flags_horizontal = 8
 size_flags_vertical = 1
@@ -248,7 +261,6 @@ step = 0.1
 value = 1.0
 
 [node name="Controls" type="Tabs" parent="settingsTabs"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -257,6 +269,7 @@ margin_right = -4.0
 margin_bottom = -4.0
 
 [node name="controlsTabContainer" type="MarginContainer" parent="settingsTabs/Controls"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_constants/margin_right = 30
