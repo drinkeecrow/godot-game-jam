@@ -17,8 +17,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if delta / 5 == 0:
-		print(state)
 	pass
 	
 func _input(event):
@@ -28,8 +26,12 @@ func _input(event):
 
 func _physics_process(delta):
 	var mouse = get_local_mouse_position()
+	var tstep = 0.0
+	tstep += delta * 2.0
 	if state == "incubating":
-		#applied_force = mouse - get_global_position()
-		translate(mouse)
-	else:
-		applied_force = Vector2()
+		gravity_scale = 0.0
+		self.position = self.position.linear_interpolate(mouse + self.position, tstep)
+	elif state == "released":
+		gravity_scale = 1.0
+		apply_impulse(Vector2(), Vector2(0,1))
+	
