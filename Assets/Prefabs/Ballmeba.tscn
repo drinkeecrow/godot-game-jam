@@ -2,8 +2,8 @@
 
 [ext_resource path="res://Assets/Images/ballmeba.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Prefabs/BallControl.gd" type="Script" id=2]
-[ext_resource path="res://Assets/Prefabs/BallUpgrades/reproduction.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Assets/Prefabs/BallUpgrades/bouncy.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Prefabs/BallUpgrades/Survival.gd" type="Script" id=6]
+[ext_resource path="res://Assets/Prefabs/BallUpgrades/Survival.tscn" type="PackedScene" id=7]
 
 [sub_resource type="PhysicsMaterial" id=2]
 friction = 0.61
@@ -31,6 +31,5 @@ shape = SubResource( 1 )
 
 [node name="Upgrades" type="Node2D" parent="."]
 
-[node name="Reproduction" parent="Upgrades" instance=ExtResource( 3 )]
-
-[node name="Bouncy" parent="Upgrades" instance=ExtResource( 4 )]
+[node name="Survival" parent="Upgrades" instance=ExtResource( 7 )]
+script = ExtResource( 6 )

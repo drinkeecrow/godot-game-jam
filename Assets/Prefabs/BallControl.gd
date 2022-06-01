@@ -7,6 +7,7 @@ extends RigidBody2D
 var state = "idle"
 var score = 0
 var speed = 3.0
+signal released(body)
 
 
 # Called when the node enters the scene tree for the first time.
@@ -22,7 +23,7 @@ func _process(delta):
 	
 func _input(event):
 	if event is InputEventMouseButton:
-		state = "released"
+		state = "releasing"
 		
 
 func _physics_process(delta):
@@ -32,7 +33,9 @@ func _physics_process(delta):
 	if state == "incubating":
 		gravity_scale = 0.0
 		self.position = self.position.linear_interpolate(mouse + self.position, tstep)
-	elif state == "released":
-		gravity_scale = 1.0
+	elif state == "releasing":
+		self.set_gravity_scale(1.0)
 		apply_impulse(Vector2(), Vector2(0,1))
+		state = "released"
+		emit_signal("released", self)
 	
