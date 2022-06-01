@@ -36,3 +36,17 @@ func _physics_process(delta):
 		gravity_scale = 1.0
 		apply_impulse(Vector2(), Vector2(0,1))
 	
+func add_score(num):
+	score += num
+	
+func multiply_score(factor):
+	score = score * factor
+	
+func lose_score(num):
+	score -= num
+
+func divide_score(div):
+	score = score / div
+	
+func report_score():
+	get_tree().get_root().get_node("World/Score").add_score(score)

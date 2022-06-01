@@ -17,7 +17,8 @@ func _ready():
 func _on_ScoreBox1_body_entered(body):
 	if body is RigidBody2D:
 		print("Multi " + body.name + " " + str(multi))
-		get_tree().get_root().get_node("World/Score").multiply_score(multi)
+		body.multiply_score(multi)
+		body.report_score()
 		body.queue_free()
 
 
