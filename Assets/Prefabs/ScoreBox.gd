@@ -16,23 +16,18 @@ func _ready():
 
 func _on_ScoreBox1_body_entered(body):
 	if body is RigidBody2D:
-
 		if body.get_parent().get_node("Upgrades").get_node("Survival") != null and body.get_parent().get_node("Upgrades").get_node("Survival").enabled:
-				var instance = ball.instance()
-        body.multiply_score(multi)
-		    body.report_score()
-				instance.get_node("Upgrades").get_node("Survival").enabled=false
-				get_tree().get_root().get_node("World").add_child(instance)
-				body.queue_free()
+			body.multiply_score(multi)
+			body.report_score()
+			var instance = ball.instance()
+			instance.get_node("Upgrades").get_node("Survival").enabled=false
+			get_tree().get_root().get_node("World").add_child(instance)
+			body.queue_free()
 		else:
 			get_tree().get_root().get_node("World/Score").multiply_score(multi)
-		  body.multiply_score(multi)
-		  body.report_score()
-      body.queue_free()
-
-
-
-
+			body.multiply_score(multi)
+			body.report_score()
+			body.queue_free()
 
 func _on_BotWall2_body_entered(body):
 	pass # Replace with function body.
