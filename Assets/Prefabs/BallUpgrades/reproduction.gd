@@ -4,7 +4,9 @@ extends Node2D
 var ballRes = load("res://Assets/Prefabs/Ballmeba.tscn")
 onready var ballNode = self.owner
 var hits = 0
+var required_hits = 15
 var enabled = true
+var description = "Allows your cell to reproduce.  Every " + str(required_hits) + " hits will provide an offspring.  Offspring carry all traits of their parent, except the ability to reproduce."
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -16,7 +18,7 @@ func _ready():
 
 func _ball_hit(body):
 	if enabled:
-		if hits >15:
+		if hits >required_hits:
 			var instance = ballRes.instance()
 			#This disables reproduction on the children.  You can take this out but it gets out of hand fast
 			instance.get_node("Upgrades").get_node("Reproduction").enabled = false

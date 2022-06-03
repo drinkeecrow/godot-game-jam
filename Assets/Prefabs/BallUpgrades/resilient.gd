@@ -4,6 +4,7 @@ extends Node2D
 
 onready var ballNode = self.owner
 var enabled = true
+var description = "Your cell is resilient, causing it to bounce more."
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
