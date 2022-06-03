@@ -1,7 +1,7 @@
 extends Area2D
 
 var multi = 1
-var ball = preload("res://Assets/Prefabs/Ballmeba.tscn")
+var ball = preload("res://Assets/Prefabs/Ball/Ballmeba.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var rng = RandomNumberGenerator.new()

@@ -4,7 +4,8 @@ extends KinematicBody2D
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-var ball = preload("res://Assets/Prefabs/Ballmeba.tscn")
+var ball_type = preload("res://Assets/Prefabs/Ball/BallControl.gd")
+var ball = preload("res://Assets/Prefabs/Ball/Ballmeba.tscn")
 var floaty = preload("res://Assets/Prefabs/floatyText.tscn")
 
 var hitSound1 = preload("res://Assets/fruit1.wav")
@@ -31,7 +32,7 @@ func _physics_process(_delta):
 	pass
 
 func _on_Area2D_body_entered(body):
-	if not body == self:
+	if body is ball_type:
 		var instance = floaty.instance()
 		hits += 1
 		instance.set_text("+" + str(hits))

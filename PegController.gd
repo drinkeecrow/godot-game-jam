@@ -6,7 +6,7 @@ extends Container
 # var b = "text"
 var lvl1 = preload("res://Assets/Prefabs/lvl1.tscn")
 var lvl2 = preload("res://Assets/Prefabs/lvl2.tscn")
-var ball = preload("res://Assets/Prefabs/Ballmeba.tscn")
+var ball = preload("res://Assets/Prefabs/Ball/Ballmeba.tscn")
 var pegsName = "Pegs"
 var ballName = "Ballmeba"
 
