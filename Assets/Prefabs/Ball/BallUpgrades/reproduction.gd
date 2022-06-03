@@ -1,7 +1,7 @@
 extends Node2D
 
 
-var ballRes = load("res://Assets/Prefabs/Ballmeba.tscn")
+var ballRes = load("res://Assets/Prefabs/Ball/Ballmeba.tscn")
 onready var ballNode = self.owner
 var hits = 0
 var enabled = true
