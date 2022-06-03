@@ -9,4 +9,4 @@ func _ready():
 	
 
 func on_released(body):
-	body.set_gravity_scale(.5)
+	body.set_gravity_scale(10)

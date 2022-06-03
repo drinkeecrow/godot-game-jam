@@ -42,17 +42,17 @@ func _on_Area2D_body_entered(body):
 		var red = self.get_node("Sprite").get_modulate().r
 		self.get_node("Sprite").modulate = Color(red+0.2,1,1)
 		self.get_tree().get_root().get_node("World/Score").add_score(hits)
-		if not $AudioStreamPlayer2D.is_playing():
-			var rng = RandomNumberGenerator.new()
-			rng.randomize()
-			var rndSound = rng.randi_range(1,3)
-			if rndSound == 1:
-				$AudioStreamPlayer2D.stream = hitSound1
-			if rndSound == 2:
-				$AudioStreamPlayer2D.stream = hitSound2
-			if rndSound == 3:
-				$AudioStreamPlayer2D.stream = hitSound3
-			$AudioStreamPlayer2D.play()
+		#if not $AudioStreamPlayer2D.is_playing():
+		var rng = RandomNumberGenerator.new()
+		rng.randomize()
+		var rndSound = rng.randi_range(1,3)
+		if rndSound == 1:
+			$AudioStreamPlayer2D.stream = hitSound1
+		if rndSound == 2:
+			$AudioStreamPlayer2D.stream = hitSound2
+		if rndSound == 3:
+			$AudioStreamPlayer2D.stream = hitSound3
+		$AudioStreamPlayer2D.play()
 #		if self.canSpawn:
 #			var instance = ball.instance()
 	#			#instance.position.x = body.get_parent().position.x +30
