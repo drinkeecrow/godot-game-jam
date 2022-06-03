@@ -39,3 +39,17 @@ func _physics_process(delta):
 		state = "released"
 		emit_signal("released", self)
 	
+func add_score(num):
+	score += num
+	
+func multiply_score(factor):
+	score = score * factor
+	
+func lose_score(num):
+	score -= num
+
+func divide_score(div):
+	score = score / div
+	
+func report_score():
+	get_tree().get_root().get_node("World/Score").add_score(score)
