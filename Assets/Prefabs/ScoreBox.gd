@@ -20,7 +20,6 @@ func _on_ScoreBox1_body_entered(body):
 			body.multiply_score(multi)
 			body.report_score()
 			var instance = ball.instance()
-			instance.get_node("Upgrades").get_node("Survival").enabled=false
 			get_tree().get_root().get_node("World").add_child(instance)
 			body.get_parent().queue_free()
 		else:
@@ -28,6 +27,6 @@ func _on_ScoreBox1_body_entered(body):
 			body.multiply_score(multi)
 			body.report_score()
 			body.get_parent().queue_free()
+		if get_tree().get_root().get_node("World/GameController").activeBalls == 1:
+			get_tree().get_root().get_node("World/GameController").skill_selection()
 
-func _on_BotWall2_body_entered(body):
-	pass # Replace with function body.

@@ -5,7 +5,7 @@ var require_hits = 5
 var multiplier = 5
 var hits = 0
 var description = "Allows your cell to digest pegs.  After hitting " + str(require_hits) + " pegs, that peg will be digested and multiply your cells score by " + str(multiplier) + "."
-onready var ballNode = self.owner
+var ballNode
 var floaty = preload("res://Assets/Prefabs/floatyText.tscn")
 var belch1 = preload("res://Assets/belch1.wav")
 var belch2 = preload("res://Assets/belch2.wav")
@@ -16,6 +16,7 @@ var belch6 = preload("res://Assets/belch6.wav")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	ballNode = self.get_parent().get_parent()
 	ballNode.get_node("RigidBody2D").connect("body_entered", self, "_ball_hit")
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.

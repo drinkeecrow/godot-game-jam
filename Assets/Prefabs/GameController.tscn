@@ -1,0 +1,109 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/Prefabs/GameController.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Images/MutationSelection.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Images/commonBackground.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Images/reproduction.png" type="Texture" id=4]
+
+[node name="GameController" type="Node2D"]
+z_index = 1
+script = ExtResource( 1 )
+
+[node name="Popup" type="Popup" parent="."]
+visible = true
+margin_left = -381.0
+margin_top = -186.0
+margin_right = 419.0
+margin_bottom = 214.0
+
+[node name="Sprite" type="Sprite" parent="Popup"]
+position = Vector2( 400, 200 )
+z_index = 1
+texture = ExtResource( 2 )
+
+[node name="SelectButtons" type="Node2D" parent="Popup"]
+
+[node name="seleciton1" type="Button" parent="Popup/SelectButtons"]
+margin_left = 125.0
+margin_top = 250.0
+margin_right = 189.0
+margin_bottom = 314.0
+flat = true
+expand_icon = true
+
+[node name="rarity" type="Sprite" parent="Popup/SelectButtons/seleciton1"]
+position = Vector2( 32, 32 )
+scale = Vector2( 0.5, 0.5 )
+z_index = 1
+texture = ExtResource( 3 )
+
+[node name="icon" type="Sprite" parent="Popup/SelectButtons/seleciton1"]
+position = Vector2( 32, 32 )
+scale = Vector2( 0.5, 0.5 )
+z_index = 2
+texture = ExtResource( 4 )
+
+[node name="seleciton2" type="Button" parent="Popup/SelectButtons"]
+margin_left = 285.0
+margin_top = 250.0
+margin_right = 349.0
+margin_bottom = 314.0
+flat = true
+expand_icon = true
+
+[node name="rarity" type="Sprite" parent="Popup/SelectButtons/seleciton2"]
+position = Vector2( 32, 32 )
+scale = Vector2( 0.5, 0.5 )
+z_index = 1
+texture = ExtResource( 3 )
+
+[node name="icon" type="Sprite" parent="Popup/SelectButtons/seleciton2"]
+position = Vector2( 32, 32 )
+scale = Vector2( 0.5, 0.5 )
+z_index = 2
+texture = ExtResource( 4 )
+
+[node name="seleciton3" type="Button" parent="Popup/SelectButtons"]
+margin_left = 445.0
+margin_top = 250.0
+margin_right = 509.0
+margin_bottom = 314.0
+flat = true
+expand_icon = true
+
+[node name="rarity" type="Sprite" parent="Popup/SelectButtons/seleciton3"]
+position = Vector2( 32, 32 )
+scale = Vector2( 0.5, 0.5 )
+z_index = 1
+texture = ExtResource( 3 )
+
+[node name="icon" type="Sprite" parent="Popup/SelectButtons/seleciton3"]
+position = Vector2( 32, 32 )
+scale = Vector2( 0.5, 0.5 )
+z_index = 2
+texture = ExtResource( 4 )
+
+[node name="seleciton4" type="Button" parent="Popup/SelectButtons"]
+margin_left = 605.0
+margin_top = 250.0
+margin_right = 669.0
+margin_bottom = 314.0
+flat = true
+expand_icon = true
+
+[node name="rarity" type="Sprite" parent="Popup/SelectButtons/seleciton4"]
+position = Vector2( 32, 32 )
+scale = Vector2( 0.5, 0.5 )
+z_index = 1
+texture = ExtResource( 3 )
+
+[node name="icon" type="Sprite" parent="Popup/SelectButtons/seleciton4"]
+position = Vector2( 32, 32 )
+scale = Vector2( 0.5, 0.5 )
+z_index = 2
+texture = ExtResource( 4 )
+
+[connection signal="pressed" from="Popup/SelectButtons/seleciton1" to="." method="_on_seleciton1_pressed"]
+[connection signal="pressed" from="Popup/SelectButtons/seleciton2" to="." method="_on_seleciton2_pressed"]
+[connection signal="pressed" from="Popup/SelectButtons/seleciton3" to="." method="_on_seleciton3_pressed"]
+[connection signal="pressed" from="Popup/SelectButtons/seleciton4" to="." method="_on_seleciton4_pressed"]

@@ -4,13 +4,15 @@ var gain = 1
 var time = 3
 var enabled = true
 var description
-onready var ballNode = self.owner
+var ballNode
+
 var floaty = preload("res://Assets/Prefabs/floatyText.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	description = "Your cell is fed from the sun.  It gains " + str(gain) + " every " + str(time) + " seconds."
 	$Timer.start(time)
+	ballNode = self.get_parent().get_parent()
 
 func _on_Timer_timeout():
 	if ballNode.get_node("RigidBody2D") != null:
