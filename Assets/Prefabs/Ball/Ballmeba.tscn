@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Assets/Images/ballmeba.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Prefabs/Ball/BallControl.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Prefabs/Ball/BallUpgrades/reproduction.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Assets/Prefabs/Ball/BallUpgrades/gravity.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Prefabs/BallUpgrades/photosynthisis.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Prefabs/BallUpgrades/digestion.tscn" type="PackedScene" id=5]
 
 [sub_resource type="PhysicsMaterial" id=2]
 friction = 0.61
@@ -33,4 +34,6 @@ shape = SubResource( 1 )
 
 [node name="Reproduction" parent="Upgrades" instance=ExtResource( 3 )]
 
-[node name="Gravity" parent="Upgrades" instance=ExtResource( 4 )]
+[node name="Photosynthisis" parent="Upgrades" instance=ExtResource( 4 )]
+
+[node name="Digestion" parent="Upgrades" instance=ExtResource( 5 )]

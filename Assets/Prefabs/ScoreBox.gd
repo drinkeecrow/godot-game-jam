@@ -22,12 +22,12 @@ func _on_ScoreBox1_body_entered(body):
 			var instance = ball.instance()
 			instance.get_node("Upgrades").get_node("Survival").enabled=false
 			get_tree().get_root().get_node("World").add_child(instance)
-			body.queue_free()
+			body.get_parent().queue_free()
 		else:
 			get_tree().get_root().get_node("World/Score").multiply_score(multi)
 			body.multiply_score(multi)
 			body.report_score()
-			body.queue_free()
+			body.get_parent().queue_free()
 
 func _on_BotWall2_body_entered(body):
 	pass # Replace with function body.
