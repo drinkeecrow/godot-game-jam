@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://GUI/settingsMenu.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Custom Fonts/settingsMenu_30.tres" type="DynamicFont" id=2]
-[ext_resource path="res://Assets/Images/Close.png" type="Texture" id=3]
 
 [sub_resource type="Theme" id=1]
 
@@ -275,16 +274,6 @@ theme = SubResource( 1 )
 custom_constants/vseparation = 6
 columns = 2
 
-[node name="closeSettingsPopup" type="Button" parent="."]
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = -32.0
-margin_bottom = 26.0
-size_flags_horizontal = 4
-size_flags_vertical = 4
-icon = ExtResource( 3 )
-flat = true
-
 [connection signal="value_changed" from="settingsTabs/Audio/audioTabContainer/audioSettingsGrid/masterVolSlider" to="." method="_on_masterVolSlider_value_changed"]
 [connection signal="value_changed" from="settingsTabs/Audio/audioTabContainer/audioSettingsGrid/musicVolSlider" to="." method="_on_musicVolSlider_value_changed"]
 [connection signal="value_changed" from="settingsTabs/Audio/audioTabContainer/audioSettingsGrid/sfxVolSlider" to="." method="_on_sfxVolSlider_value_changed"]
@@ -294,4 +283,3 @@ flat = true
 [connection signal="value_changed" from="settingsTabs/Video/videoTabContainer/videoSettingsGrid/fpsSliderContainer/fpsSlider" to="." method="_on_fpsSlider_value_changed"]
 [connection signal="toggled" from="settingsTabs/Video/videoTabContainer/videoSettingsGrid/bloomToggleButton" to="." method="_on_bloomToggleButton_toggled"]
 [connection signal="value_changed" from="settingsTabs/Video/videoTabContainer/videoSettingsGrid/brightnessSlider" to="." method="_on_brightnessSlider_value_changed"]
-[connection signal="pressed" from="closeSettingsPopup" to="." method="_on_closeSettingsPopup_pressed"]

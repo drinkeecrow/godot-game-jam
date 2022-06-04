@@ -81,7 +81,6 @@ custom_fonts/font = ExtResource( 3 )
 text = "Quit Game"
 
 [node name="settingsMenu" parent="." instance=ExtResource( 4 )]
-visible = true
 
 [connection signal="pressed" from="MarginContainer/pauseMenuBackground/MarginContainer/pauseMenuItems/MarginContainer/pauseMenuButtonVBox/pauseMenuOptionsButton" to="." method="_on_pauseMenuOptionsButton_pressed"]
 [connection signal="pressed" from="MarginContainer/pauseMenuBackground/MarginContainer/pauseMenuItems/MarginContainer/pauseMenuButtonVBox/pauseMenuQuitButton" to="." method="_on_pauseMenuQuitButton_pressed"]

@@ -63,3 +63,4 @@ visible = true
 
 [connection signal="pressed" from="Button" to="GameSpace" method="_on_Button_pressed"]
 [connection signal="pressed" from="Button2" to="GameSpace" method="_on_Button2_pressed"]
+[connection signal="popup_hide" from="pauseMenu" to="." method="_on_pauseMenu_popup_hide"]
