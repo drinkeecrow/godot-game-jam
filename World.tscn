@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Assets/Prefabs/GameSpace.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Images/gamebackground.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Custom Fonts/settingsMenu_30.tres" type="DynamicFont" id=3]
 [ext_resource path="res://Score.gd" type="Script" id=4]
 [ext_resource path="res://Assets/Prefabs/Ball/Ballmeba.tscn" type="PackedScene" id=5]
+[ext_resource path="res://GUI/SettingsMenu-World.tscn" type="PackedScene" id=6]
 
 [node name="World" type="Node2D"]
 z_index = 1
@@ -61,6 +62,8 @@ text = "Level 2"
 [node name="background" type="Sprite" parent="."]
 z_index = -1
 texture = ExtResource( 2 )
+
+[node name="SettingsMenu" parent="." instance=ExtResource( 6 )]
 
 [connection signal="pressed" from="Button" to="GameSpace" method="_on_Button_pressed"]
 [connection signal="pressed" from="Button2" to="GameSpace" method="_on_Button2_pressed"]
