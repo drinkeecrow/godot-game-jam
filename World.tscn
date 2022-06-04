@@ -4,8 +4,8 @@
 [ext_resource path="res://Assets/Images/gamebackground.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Custom Fonts/settingsMenu_30.tres" type="DynamicFont" id=3]
 [ext_resource path="res://Score.gd" type="Script" id=4]
-[ext_resource path="res://Assets/Prefabs/Ball/Ballmeba.tscn" type="PackedScene" id=5]
 [ext_resource path="res://GUI/SettingsMenu-World.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/Prefabs/GameController.tscn" type="PackedScene" id=7]
 
 [node name="World" type="Node2D"]
 z_index = 1
@@ -26,6 +26,7 @@ margin_left = -346.0
 margin_top = -361.0
 margin_right = 639.0
 margin_bottom = -227.0
+mouse_filter = 1
 
 [node name="Score" type="Label" parent="."]
 margin_left = -613.0
@@ -39,9 +40,6 @@ custom_fonts/font = ExtResource( 3 )
 text = "0"
 align = 1
 script = ExtResource( 4 )
-
-[node name="Ballmeba" parent="." instance=ExtResource( 5 )]
-position = Vector2( -200, -318 )
 
 [node name="Button" type="Button" parent="."]
 margin_left = 512.0
@@ -64,6 +62,73 @@ z_index = -1
 texture = ExtResource( 2 )
 
 [node name="SettingsMenu" parent="." instance=ExtResource( 6 )]
+
+[node name="GameController" parent="." instance=ExtResource( 7 )]
+
+[node name="Mutations" type="Node" parent="."]
+
+[node name="Selection1" type="Button" parent="Mutations"]
+margin_left = -567.0
+margin_top = 141.0
+margin_right = -503.0
+margin_bottom = 205.0
+flat = true
+
+[node name="rare" type="Sprite" parent="Mutations/Selection1"]
+position = Vector2( 32, 32 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="icon" type="Sprite" parent="Mutations/Selection1"]
+position = Vector2( 32, 32 )
+scale = Vector2( 0.5, 0.500001 )
+
+[node name="Selection2" type="Button" parent="Mutations"]
+margin_left = -483.0
+margin_top = 141.0
+margin_right = -419.0
+margin_bottom = 205.0
+flat = true
+
+[node name="rare" type="Sprite" parent="Mutations/Selection2"]
+position = Vector2( 32, 32 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="icon" type="Sprite" parent="Mutations/Selection2"]
+position = Vector2( 32, 32 )
+scale = Vector2( 0.5, 0.500001 )
+
+[node name="Selection3" type="Button" parent="Mutations"]
+margin_left = -567.0
+margin_top = 226.0
+margin_right = -503.0
+margin_bottom = 290.0
+flat = true
+
+[node name="rare" type="Sprite" parent="Mutations/Selection3"]
+position = Vector2( 32, 32 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="icon" type="Sprite" parent="Mutations/Selection3"]
+position = Vector2( 32, 32 )
+scale = Vector2( 0.5, 0.500001 )
+
+[node name="Selection4" type="Button" parent="Mutations"]
+margin_left = -483.0
+margin_top = 226.0
+margin_right = -419.0
+margin_bottom = 290.0
+flat = true
+
+[node name="rare" type="Sprite" parent="Mutations/Selection4"]
+position = Vector2( 32, 32 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="icon" type="Sprite" parent="Mutations/Selection4"]
+position = Vector2( 32, 32 )
+scale = Vector2( 0.5, 0.500001 )
+
+[node name="StartPosition" type="Position2D" parent="."]
+position = Vector2( 104, -297 )
 
 [connection signal="pressed" from="Button" to="GameSpace" method="_on_Button_pressed"]
 [connection signal="pressed" from="Button2" to="GameSpace" method="_on_Button2_pressed"]

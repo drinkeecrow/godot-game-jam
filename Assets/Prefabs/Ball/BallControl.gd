@@ -13,9 +13,16 @@ signal released(body)
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	self.add_to_group("balls")
-	state = "incubating"
-	pass # Replace with function body.
+	self.position = get_tree().get_root().get_node("World/StartPosition").position
+	gravity_scale = 0.0
+	get_tree().get_root().get_node("World/TopMargin").connect("mouse_entered", self, "start_mouse_follow")
+	get_tree().get_root().get_node("World/TopMargin").connect("mouse_exited", self, "end_mouse_follow")
 
+func _exit_tree():
+	get_tree().get_root().get_node("World/GameController").activeBalls -= 1
+	
+func _enter_tree():
+	get_tree().get_root().get_node("World/GameController").activeBalls += 1
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -31,7 +38,6 @@ func _physics_process(delta):
 	var tstep = 0.0
 	tstep += delta * speed
 	if state == "incubating":
-		gravity_scale = 0.0
 		self.position = self.position.linear_interpolate(mouse + self.position, tstep)
 	elif state == "releasing":
 		self.set_gravity_scale(1.0)
@@ -53,3 +59,11 @@ func divide_score(div):
 	
 func report_score():
 	get_tree().get_root().get_node("World/Score").add_score(score)
+	
+func start_mouse_follow():
+	if state == "idle":
+		state = "incubating"
+	
+func end_mouse_follow():
+	if state == "incubating":
+		state = "idle"
