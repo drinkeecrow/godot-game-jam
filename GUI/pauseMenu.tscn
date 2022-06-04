@@ -1,11 +1,11 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://GUI/pauseMenu.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Custom Fonts/pauseMenu48.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Assets/Custom Fonts/pauseMenu_24.tres" type="DynamicFont" id=3]
+[ext_resource path="res://GUI/settingsMenu.tscn" type="PackedScene" id=4]
 
 [node name="pauseMenu" type="Popup"]
-visible = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
@@ -79,3 +79,9 @@ margin_right = 170.0
 margin_bottom = 87.0
 custom_fonts/font = ExtResource( 3 )
 text = "Quit Game"
+
+[node name="settingsMenu" parent="." instance=ExtResource( 4 )]
+visible = true
+
+[connection signal="pressed" from="MarginContainer/pauseMenuBackground/MarginContainer/pauseMenuItems/MarginContainer/pauseMenuButtonVBox/pauseMenuOptionsButton" to="." method="_on_pauseMenuOptionsButton_pressed"]
+[connection signal="pressed" from="MarginContainer/pauseMenuBackground/MarginContainer/pauseMenuItems/MarginContainer/pauseMenuButtonVBox/pauseMenuQuitButton" to="." method="_on_pauseMenuQuitButton_pressed"]
