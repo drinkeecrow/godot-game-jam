@@ -2,7 +2,7 @@ extends Node2D
 
 onready var ballNode = self.owner
 var enabled = true
-var description = "Makes your cell extra dense"
+var description = "Makes your cell extra dense.  It's very heavy."
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
