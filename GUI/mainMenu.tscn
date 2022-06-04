@@ -1,15 +1,35 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=20 format=2]
 
-[ext_resource path="res://GUI/optionsButton.gd" type="Script" id=1]
+[ext_resource path="res://GUI/mainMenu.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Images/background_image.jpg" type="Texture" id=2]
 [ext_resource path="res://Assets/Images/Title.bmp" type="Texture" id=3]
-[ext_resource path="res://Assets/Images/Art.bmp" type="Texture" id=4]
+[ext_resource path="res://Assets/Images/blackBall.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Custom Fonts/settingsMenu_30.tres" type="DynamicFont" id=5]
 [ext_resource path="res://GUI/fps_label.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/Images/ballmeba.png" type="Texture" id=7]
+[ext_resource path="res://CollisionShapes/mainMenuWall.tres" type="Shape2D" id=8]
+[ext_resource path="res://Assets/Images/whiteball.png" type="Texture" id=9]
+[ext_resource path="res://MoveChildrenCircle.gd" type="Script" id=10]
+[ext_resource path="res://GUI/Pegs.gd" type="Script" id=11]
+[ext_resource path="res://GUI/Ball.gd" type="Script" id=12]
+[ext_resource path="res://environmentVariables/ballPhys.tres" type="PhysicsMaterial" id=13]
+[ext_resource path="res://GUI/Timer.gd" type="Script" id=14]
+[ext_resource path="res://Assets/Images/background.png" type="Texture" id=15]
+[ext_resource path="res://GUI/settingsMenu.tscn" type="PackedScene" id=16]
+
+[sub_resource type="PhysicsMaterial" id=2]
+bounce = 1.0
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 15.0
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 30.0
 
 [node name="mainMenu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 1 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
 texture = ExtResource( 2 )
@@ -61,7 +81,6 @@ margin_right = 260.0
 margin_bottom = 348.0
 custom_fonts/font = ExtResource( 5 )
 text = "Options"
-script = ExtResource( 1 )
 
 [node name="quitButton" type="Button" parent="VBoxContainer/HSplitContainer/menuButtons"]
 margin_top = 352.0
@@ -70,10 +89,212 @@ margin_bottom = 400.0
 custom_fonts/font = ExtResource( 5 )
 text = "Quit"
 
-[node name="splashImage" type="TextureRect" parent="VBoxContainer/HSplitContainer"]
+[node name="Container" type="Container" parent="VBoxContainer/HSplitContainer"]
 margin_left = 272.0
 margin_right = 1100.0
 margin_bottom = 400.0
+
+[node name="TextureRect" type="Sprite" parent="VBoxContainer/HSplitContainer/Container"]
+position = Vector2( 402, 198 )
+scale = Vector2( 0.777147, 0.645078 )
+texture = ExtResource( 15 )
+
+[node name="Walls" type="Node2D" parent="VBoxContainer/HSplitContainer/Container"]
+
+[node name="Walls" type="RigidBody2D" parent="VBoxContainer/HSplitContainer/Container/Walls"]
+mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VBoxContainer/HSplitContainer/Container/Walls/Walls"]
+position = Vector2( 398, -22 )
+shape = ExtResource( 8 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="VBoxContainer/HSplitContainer/Container/Walls/Walls"]
+position = Vector2( 405, 418 )
+shape = ExtResource( 8 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="VBoxContainer/HSplitContainer/Container/Walls/Walls"]
+position = Vector2( -11, 205 )
+rotation = 1.56567
+shape = ExtResource( 8 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="VBoxContainer/HSplitContainer/Container/Walls/Walls"]
+position = Vector2( 816, 211 )
+rotation = 1.56567
+shape = ExtResource( 8 )
+
+[node name="Ball" type="RigidBody2D" parent="VBoxContainer/HSplitContainer/Container"]
+position = Vector2( 60, 43 )
+mass = 1.02041
+physics_material_override = SubResource( 2 )
+contacts_reported = 1
+contact_monitor = true
+script = ExtResource( 12 )
+
+[node name="Sprite" type="Sprite" parent="VBoxContainer/HSplitContainer/Container/Ball"]
+texture = ExtResource( 7 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VBoxContainer/HSplitContainer/Container/Ball"]
+shape = SubResource( 1 )
+
+[node name="Timer" type="Timer" parent="VBoxContainer/HSplitContainer/Container/Ball"]
+wait_time = 10.0
+autostart = true
+script = ExtResource( 14 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="VBoxContainer/HSplitContainer/Container/Ball"]
+
+[node name="Pegs" type="Node2D" parent="VBoxContainer/HSplitContainer/Container"]
+script = ExtResource( 11 )
+
+[node name="circlePegging" type="Node2D" parent="VBoxContainer/HSplitContainer/Container/Pegs"]
+position = Vector2( 400, 200 )
+script = ExtResource( 10 )
+
+[node name="Center" type="Position2D" parent="VBoxContainer/HSplitContainer/Container/Pegs/circlePegging"]
+position = Vector2( 0, 1 )
+rotation = -0.00143472
+
+[node name="RigidBody2D" type="RigidBody2D" parent="VBoxContainer/HSplitContainer/Container/Pegs/circlePegging/Center"]
+position = Vector2( -1, -18 )
+scale = Vector2( 0.5, 0.5 )
+mode = 3
+physics_material_override = ExtResource( 13 )
+
+[node name="Sprite" type="Sprite" parent="VBoxContainer/HSplitContainer/Container/Pegs/circlePegging/Center/RigidBody2D"]
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VBoxContainer/HSplitContainer/Container/Pegs/circlePegging/Center/RigidBody2D"]
+shape = SubResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="RigidBody2D2" type="RigidBody2D" parent="VBoxContainer/HSplitContainer/Container/Pegs/circlePegging/Center"]
+position = Vector2( 0, -62 )
+scale = Vector2( 0.5, 0.5 )
+mode = 3
+physics_material_override = ExtResource( 13 )
+
+[node name="Sprite" type="Sprite" parent="VBoxContainer/HSplitContainer/Container/Pegs/circlePegging/Center/RigidBody2D2"]
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VBoxContainer/HSplitContainer/Container/Pegs/circlePegging/Center/RigidBody2D2"]
+shape = SubResource( 3 )
+
+[node name="RigidBody2D3" type="RigidBody2D" parent="VBoxContainer/HSplitContainer/Container/Pegs/circlePegging/Center"]
+position = Vector2( -2, -112 )
+scale = Vector2( 0.5, 0.5 )
+mode = 3
+physics_material_override = ExtResource( 13 )
+
+[node name="Sprite" type="Sprite" parent="VBoxContainer/HSplitContainer/Container/Pegs/circlePegging/Center/RigidBody2D3"]
 texture = ExtResource( 4 )
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VBoxContainer/HSplitContainer/Container/Pegs/circlePegging/Center/RigidBody2D3"]
+shape = SubResource( 3 )
+
+[node name="RigidBody2D4" type="RigidBody2D" parent="VBoxContainer/HSplitContainer/Container/Pegs/circlePegging/Center"]
+position = Vector2( -2, -162 )
+scale = Vector2( 0.5, 0.5 )
+mode = 3
+physics_material_override = ExtResource( 13 )
+
+[node name="Sprite" type="Sprite" parent="VBoxContainer/HSplitContainer/Container/Pegs/circlePegging/Center/RigidBody2D4"]
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VBoxContainer/HSplitContainer/Container/Pegs/circlePegging/Center/RigidBody2D4"]
+shape = SubResource( 3 )
+
+[node name="circlePeggingRight" type="Node2D" parent="VBoxContainer/HSplitContainer/Container/Pegs"]
+position = Vector2( 685, 203 )
+rotation = 1.61475
+script = ExtResource( 10 )
+
+[node name="Center" type="Position2D" parent="VBoxContainer/HSplitContainer/Container/Pegs/circlePeggingRight"]
+position = Vector2( 0, -1 )
+
+[node name="RigidBody2D" type="RigidBody2D" parent="VBoxContainer/HSplitContainer/Container/Pegs/circlePeggingRight/Center"]
+position = Vector2( 2, 62 )
+scale = Vector2( 0.5, 0.5 )
+mode = 3
+physics_material_override = ExtResource( 13 )
+
+[node name="Sprite" type="Sprite" parent="VBoxContainer/HSplitContainer/Container/Pegs/circlePeggingRight/Center/RigidBody2D"]
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VBoxContainer/HSplitContainer/Container/Pegs/circlePeggingRight/Center/RigidBody2D"]
+shape = SubResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="RigidBody2D2" type="RigidBody2D" parent="VBoxContainer/HSplitContainer/Container/Pegs/circlePeggingRight/Center"]
+position = Vector2( 0, -62 )
+scale = Vector2( 0.5, 0.5 )
+mode = 3
+physics_material_override = ExtResource( 13 )
+
+[node name="Sprite" type="Sprite" parent="VBoxContainer/HSplitContainer/Container/Pegs/circlePeggingRight/Center/RigidBody2D2"]
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VBoxContainer/HSplitContainer/Container/Pegs/circlePeggingRight/Center/RigidBody2D2"]
+shape = SubResource( 3 )
+
+[node name="circlePeggingRight2" type="Node2D" parent="VBoxContainer/HSplitContainer/Container/Pegs"]
+position = Vector2( 126, 195 )
+rotation = 1.54134
+script = ExtResource( 10 )
+
+[node name="Center" type="Position2D" parent="VBoxContainer/HSplitContainer/Container/Pegs/circlePeggingRight2"]
+position = Vector2( 2, 1 )
+
+[node name="RigidBody2D" type="RigidBody2D" parent="VBoxContainer/HSplitContainer/Container/Pegs/circlePeggingRight2/Center"]
+position = Vector2( 2, 62 )
+scale = Vector2( 0.5, 0.5 )
+mode = 3
+physics_material_override = ExtResource( 13 )
+
+[node name="Sprite" type="Sprite" parent="VBoxContainer/HSplitContainer/Container/Pegs/circlePeggingRight2/Center/RigidBody2D"]
+texture = ExtResource( 9 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VBoxContainer/HSplitContainer/Container/Pegs/circlePeggingRight2/Center/RigidBody2D"]
+shape = SubResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="RigidBody2D2" type="RigidBody2D" parent="VBoxContainer/HSplitContainer/Container/Pegs/circlePeggingRight2/Center"]
+position = Vector2( 0, -62 )
+scale = Vector2( 0.5, 0.5 )
+mode = 3
+physics_material_override = ExtResource( 13 )
+
+[node name="Sprite" type="Sprite" parent="VBoxContainer/HSplitContainer/Container/Pegs/circlePeggingRight2/Center/RigidBody2D2"]
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VBoxContainer/HSplitContainer/Container/Pegs/circlePeggingRight2/Center/RigidBody2D2"]
+shape = SubResource( 3 )
+
 [node name="Label" parent="." instance=ExtResource( 6 )]
+
+[node name="settingsMenu" parent="." instance=ExtResource( 16 )]
+visible = false
+margin_left = -468.0
+margin_top = -262.0
+margin_right = 492.0
+margin_bottom = 278.0
+
+[connection signal="pressed" from="VBoxContainer/HSplitContainer/menuButtons/startButton" to="." method="_on_startButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/HSplitContainer/menuButtons/optionsButton" to="." method="_on_optionsButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/HSplitContainer/menuButtons/quitButton" to="." method="_on_quitButton_pressed"]
+[connection signal="body_entered" from="VBoxContainer/HSplitContainer/Container/Ball" to="VBoxContainer/HSplitContainer/Container/Ball" method="_on_Ball_body_entered"]
+[connection signal="timeout" from="VBoxContainer/HSplitContainer/Container/Ball/Timer" to="VBoxContainer/HSplitContainer/Container/Ball/Timer" method="_on_Timer_timeout"]

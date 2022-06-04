@@ -1,4 +1,4 @@
 extends Popup
 
-func _ready():
-	popup_centered()
+#func _ready():
+#	popup_centered()
