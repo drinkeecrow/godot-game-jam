@@ -11,10 +11,6 @@ var floaty = preload("res://Assets/Prefabs/floatyText.tscn")
 func _ready():
 	description = "Your cell is fed from the sun.  It gains " + str(gain) + " every " + str(time) + " seconds."
 	$Timer.start(time)
-	
-
-
-
 
 func _on_Timer_timeout():
 	if ballNode.get_node("RigidBody2D") != null:

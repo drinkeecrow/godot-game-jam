@@ -5,6 +5,7 @@
 
 [node name="BotWall" type="RigidBody2D"]
 position = Vector2( -2, 1 )
+z_index = -1
 mode = 1
 
 [node name="Sprite" type="Sprite" parent="."]

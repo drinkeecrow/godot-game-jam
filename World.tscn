@@ -1,7 +1,10 @@
 [gd_scene load_steps=7 format=2]
-
 [ext_resource path="res://Assets/Prefabs/GameSpace.tscn" type="PackedScene" id=1]
 [ext_resource path="res://World.gd" type="Script" id=2]
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Prefabs/GameSpace.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Images/gamebackground.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Custom Fonts/settingsMenu_30.tres" type="DynamicFont" id=3]
 [ext_resource path="res://Score.gd" type="Script" id=4]
 [ext_resource path="res://Assets/Prefabs/Ball/Ballmeba.tscn" type="PackedScene" id=5]
@@ -9,6 +12,8 @@
 
 [node name="World" type="Node2D"]
 script = ExtResource( 2 )
+z_index = 1
+
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
@@ -28,38 +33,44 @@ margin_right = 639.0
 margin_bottom = -227.0
 
 [node name="Score" type="Label" parent="."]
-margin_left = -592.0
-margin_top = -328.0
-margin_right = -552.0
-margin_bottom = -314.0
+margin_left = -613.0
+margin_top = -160.0
+margin_right = -369.0
+margin_bottom = -118.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_outline_modulate = Color( 0.72549, 0.164706, 0.164706, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 3 )
-text = "test"
+text = "0"
+align = 1
 script = ExtResource( 4 )
 
 [node name="Ballmeba" parent="." instance=ExtResource( 5 )]
 position = Vector2( -200, -318 )
 
 [node name="Button" type="Button" parent="."]
-margin_left = -592.0
-margin_top = -184.0
-margin_right = -580.0
-margin_bottom = -164.0
+margin_left = 512.0
+margin_top = -336.0
+margin_right = 623.0
+margin_bottom = -288.0
 custom_fonts/font = ExtResource( 3 )
 text = "Level 1"
 
 [node name="Button2" type="Button" parent="."]
-margin_left = -592.0
-margin_top = -128.0
-margin_right = -481.0
-margin_bottom = -80.0
+margin_left = 512.0
+margin_top = -280.0
+margin_right = 623.0
+margin_bottom = -232.0
 custom_fonts/font = ExtResource( 3 )
 text = "Level 2"
 
+
 [node name="pauseMenu" parent="." instance=ExtResource( 6 )]
 visible = true
+[node name="background" type="Sprite" parent="."]
+z_index = -1
+texture = ExtResource( 2 )
+
 
 [connection signal="pressed" from="Button" to="GameSpace" method="_on_Button_pressed"]
 [connection signal="pressed" from="Button2" to="GameSpace" method="_on_Button2_pressed"]
