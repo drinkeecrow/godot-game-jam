@@ -24,43 +24,53 @@ z_index = 1
 z_as_relative = false
 
 [node name="BotWall" parent="ScoreArea" instance=ExtResource( 3 )]
-position = Vector2( -3, 19 )
+position = Vector2( 12, 556.56 )
+scale = Vector2( 0.5, 0.25 )
 z_index = 0
 
 [node name="BotWall2" parent="ScoreArea" instance=ExtResource( 3 )]
-position = Vector2( 102, 18.985 )
+position = Vector2( 113, 557.56 )
+scale = Vector2( 0.5, 0.25 )
 z_index = 0
 
 [node name="BotWall3" parent="ScoreArea" instance=ExtResource( 3 )]
-position = Vector2( 212, 19 )
+position = Vector2( 223, 557.574 )
+scale = Vector2( 0.5, 0.25 )
 z_index = 0
 
 [node name="BotWall4" parent="ScoreArea" instance=ExtResource( 3 )]
-position = Vector2( 321, 18.985 )
+position = Vector2( 332, 557.56 )
+scale = Vector2( 0.5, 0.25 )
 z_index = 0
 
 [node name="BotWall5" parent="ScoreArea" instance=ExtResource( 3 )]
-position = Vector2( 430, 18.985 )
+position = Vector2( 441, 557.56 )
+scale = Vector2( 0.5, 0.25 )
 z_index = 0
 
 [node name="BotWall6" parent="ScoreArea" instance=ExtResource( 3 )]
-position = Vector2( 539, 18.985 )
+position = Vector2( 550, 557.56 )
+scale = Vector2( 0.5, 0.25 )
 z_index = 0
 
 [node name="BotWall7" parent="ScoreArea" instance=ExtResource( 3 )]
-position = Vector2( 647, 18.985 )
+position = Vector2( 658, 557.56 )
+scale = Vector2( 0.5, 0.25 )
 z_index = 0
 
 [node name="BotWall8" parent="ScoreArea" instance=ExtResource( 3 )]
-position = Vector2( 755, 18.985 )
+position = Vector2( 766, 557.56 )
+scale = Vector2( 0.5, 0.25 )
 z_index = 0
 
 [node name="BotWall9" parent="ScoreArea" instance=ExtResource( 3 )]
-position = Vector2( 861, 18.985 )
+position = Vector2( 872, 557.56 )
+scale = Vector2( 0.5, 0.25 )
 z_index = 0
 
 [node name="BotWall10" parent="ScoreArea" instance=ExtResource( 3 )]
-position = Vector2( 966, 18.985 )
+position = Vector2( 971, 557.56 )
+scale = Vector2( 0.5, 0.25 )
 z_index = 0
 
 [node name="ScoreBoxes" type="Node2D" parent="ScoreArea"]
