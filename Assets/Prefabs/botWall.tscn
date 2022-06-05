@@ -9,10 +9,9 @@ z_index = -1
 mode = 1
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 11, 575 )
-scale = Vector2( 0.515625, 0.515625 )
 texture = ExtResource( 1 )
+offset = Vector2( 0, -10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 11, 580 )
+scale = Vector2( 1.28, 1.64 )
 shape = ExtResource( 2 )
