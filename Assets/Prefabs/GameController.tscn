@@ -125,7 +125,6 @@ position = Vector2( 8.00001, -120 )
 z_index = 1
 
 [node name="GameOver" type="Popup" parent="."]
-visible = true
 margin_right = 40.0
 margin_bottom = 40.0
 
