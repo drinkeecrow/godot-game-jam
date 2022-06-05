@@ -42,6 +42,18 @@ text = "0"
 align = 1
 script = ExtResource( 4 )
 
+[node name="Cost" type="Label" parent="."]
+margin_left = -609.0
+margin_top = -27.0
+margin_right = -365.0
+margin_bottom = 15.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 0.72549, 0.164706, 0.164706, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 3 )
+text = "0"
+align = 1
+
 [node name="Button" type="Button" parent="."]
 margin_left = 512.0
 margin_top = -336.0
@@ -86,6 +98,7 @@ scale = Vector2( 0.5, 0.500001 )
 [node name="Tooltip" parent="Mutations/Selection1" instance=ExtResource( 5 )]
 visible = false
 position = Vector2( 125, -111 )
+z_index = 1
 
 [node name="Selection2" type="Button" parent="Mutations"]
 margin_left = -483.0
@@ -105,6 +118,7 @@ scale = Vector2( 0.5, 0.500001 )
 [node name="Tooltip" parent="Mutations/Selection2" instance=ExtResource( 5 )]
 visible = false
 position = Vector2( 41, -111 )
+z_index = 1
 
 [node name="Selection3" type="Button" parent="Mutations"]
 margin_left = -567.0
@@ -124,6 +138,7 @@ scale = Vector2( 0.5, 0.500001 )
 [node name="Tooltip" parent="Mutations/Selection3" instance=ExtResource( 5 )]
 visible = false
 position = Vector2( 125, -196 )
+z_index = 1
 
 [node name="Selection4" type="Button" parent="Mutations"]
 margin_left = -483.0
@@ -143,6 +158,7 @@ scale = Vector2( 0.5, 0.500001 )
 [node name="Tooltip" parent="Mutations/Selection4" instance=ExtResource( 5 )]
 visible = false
 position = Vector2( 41, -196 )
+z_index = 1
 
 [node name="StartPosition" type="Position2D" parent="."]
 position = Vector2( 104, -297 )
