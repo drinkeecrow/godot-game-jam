@@ -17,25 +17,27 @@ func _ready():
 
 func _on_ScoreBox1_body_entered(body):
 	if body is RigidBody2D:
-		if body.get_parent().get_node("Upgrades").get_node("Survival") != null and body.get_parent().get_node("Upgrades").get_node("Survival").enabled:
-			body.multiply_score(multi)
-			var rare = body.get_parent().get_node("Upgrades").get_node("Survival").rare
-			#body.report_score()
-			var max_deaths = 1
-			if rare == "Common":
-				max_deaths = 1
-			if rare == "Rare":
-				max_deaths = 2
-			if rare == "Epic":
-				max_deaths = 3
-			if body.get_parent().get_node("Upgrades").get_node("Survival").deaths < max_deaths:
-				var instance = ball.instance()
-				for u in body.get_parent().get_node("Upgrades").get_children():
-					var copy = u.duplicate()
-					instance.get_node("Upgrades").add_child(copy)
-				instance.get_node("Upgrades").get_node("Survival").deaths += 1
-				get_tree().get_root().get_node("World").add_child(instance)
-			body.get_parent().queue_free()
+		if body.get_parent().get_node("Upgrades").get_node("Survival") != null: 
+			if body.get_parent().get_node("Upgrades").get_node("Survival").enabled:
+				body.multiply_score(multi)
+				var rare = body.get_parent().get_node("Upgrades").get_node("Survival").rare
+				#body.report_score()
+				var max_deaths = 1
+				if rare == "Common":
+					max_deaths = 1
+				if rare == "Rare":
+					max_deaths = 2
+				if rare == "Epic":
+					max_deaths = 3
+				if body.get_parent().get_node("Upgrades").get_node("Survival").deaths < max_deaths:
+					var instance = ball.instance()
+					for u in body.get_parent().get_node("Upgrades").get_children():
+						var copy = u.duplicate()
+						copy.rare = u.rare
+						instance.get_node("Upgrades").add_child(copy)						
+					instance.get_node("Upgrades").get_node("Survival").deaths += 1
+					get_tree().get_root().get_node("World").add_child(instance)
+				body.get_parent().queue_free()
 		else:
 			body.multiply_score(multi)
 			#body.report_score()

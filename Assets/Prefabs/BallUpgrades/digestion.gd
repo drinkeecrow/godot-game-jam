@@ -27,16 +27,16 @@ func _ready():
 func _ball_hit(body):
 	if enabled && body is pegType:
 		if rare == "Common":
-			require_hits = 15
+			require_hits = 14
 			multiplier = 2
 		if rare == "Rare":
-			require_hits = 10
+			require_hits = 9
 			multiplier = 3
 		if rare == "Epic":
-			require_hits = 7
+			require_hits = 6
 			multiplier = 4
 			
-		if hits >require_hits:
+		if hits >= require_hits:
 			body.queue_free()
 			ballNode.get_node("RigidBody2D").multiply_score(multiplier)
 			hits=0
