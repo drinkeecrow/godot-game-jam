@@ -3,14 +3,22 @@ extends Node2D
 var gain = 1
 var time = 3
 var enabled = true
-var description
 var ballNode
+var rare = "Common"
 
 var floaty = preload("res://Assets/Prefabs/floatyText.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	description = "Your cell is fed from the sun.  It gains " + str(gain) + " every " + str(time) + " seconds."
+	if rare == "Common":
+		time = 5
+		gain = 4
+	if rare == "Rare":
+		time = 6
+		gain = 8
+	if rare == "Epic":
+		time = 7
+		gain = 50
 	$Timer.start(time)
 	ballNode = self.get_parent().get_parent()
 

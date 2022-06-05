@@ -3,7 +3,10 @@
 [ext_resource path="res://Assets/Fonts/Open Sans/OpenSans_Condensed/OpenSans_Condensed-Light.ttf" type="DynamicFontData" id=1]
 
 [resource]
-size = 24
+size = 12
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
 extra_spacing_top = 2
 extra_spacing_bottom = 2
 extra_spacing_char = 3

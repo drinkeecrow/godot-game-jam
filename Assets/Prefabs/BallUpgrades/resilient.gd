@@ -2,7 +2,7 @@ extends Node2D
 
 var ballNode
 var enabled = true
-var description = "Your cell is resilient, causing it to bounce more."
+var rare = "Common"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -11,6 +11,10 @@ func _ready():
 
 func _ball_hit(body):
 	var vel = ballNode.get_node("RigidBody2D").get_linear_velocity()
-	#ballNode.get_node("RigidBody2D").set_linear_velocity(vel*1.2)
-	ballNode.get_node("RigidBody2D").apply_central_impulse(vel*0.025)
 	
+	if rare == "Common":
+		ballNode.get_node("RigidBody2D").apply_central_impulse(vel*0.020)
+	if rare == "Rare":
+		ballNode.get_node("RigidBody2D").apply_central_impulse(vel*0.025)
+	if rare == "Epic":
+		ballNode.get_node("RigidBody2D").apply_central_impulse(vel*0.035)

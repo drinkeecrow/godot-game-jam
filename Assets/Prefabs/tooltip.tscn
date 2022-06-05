@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/Custom Fonts/pauseMenu_24.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Assets/Prefabs/tooltip.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Images/tooltip.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Custom Fonts/pauseMenu48.tres" type="DynamicFont" id=4]
+
+[node name="Tooltip" type="Sprite"]
+position = Vector2( 9.00001, 3 )
+scale = Vector2( 1.68, 1.68 )
+texture = ExtResource( 3 )
+script = ExtResource( 2 )
+
+[node name="Description" type="Label" parent="."]
+margin_left = -90.0
+margin_top = -23.0
+margin_right = 92.0
+margin_bottom = 42.0
+custom_fonts/font = ExtResource( 4 )
+text = "After hitting 10 pegs, a new cell will be spawned.  Children are not born with this mutation."
+autowrap = true
+
+[node name="Title" type="Label" parent="."]
+margin_left = -90.0
+margin_top = -42.0
+margin_right = 5.0
+margin_bottom = -27.0
+custom_colors/font_color = Color( 0.976471, 0.537255, 1, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Reproduction"
+
+[node name="Cost" type="Label" parent="."]
+margin_left = -4.16667
+margin_top = -41.6667
+margin_right = 90.8333
+margin_bottom = -26.6667
+custom_colors/font_color = Color( 0.976471, 0.537255, 1, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "50"
+align = 2
