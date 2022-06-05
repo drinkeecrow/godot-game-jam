@@ -5,6 +5,7 @@ var require_hits = 5
 var multiplier = 5
 var hits = 0
 var ballNode
+var pegType = preload("res://Assets/Prefabs/BounceDebug.gd")
 var floaty = preload("res://Assets/Prefabs/floatyText.tscn")
 var belch1 = preload("res://Assets/belch1.wav")
 var belch2 = preload("res://Assets/belch2.wav")
@@ -24,7 +25,7 @@ func _ready():
 #	pass
 
 func _ball_hit(body):
-	if enabled:
+	if enabled && body is pegType:
 		if rare == "Common":
 			require_hits = 15
 			multiplier = 2

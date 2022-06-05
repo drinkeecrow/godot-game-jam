@@ -34,6 +34,8 @@ func _input(event):
 		
 
 func _physics_process(delta):
+	if state == "idle":
+		return
 	var mouse = get_local_mouse_position()
 	var tstep = 0.0
 	tstep += delta * speed
