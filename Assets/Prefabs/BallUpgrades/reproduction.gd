@@ -26,6 +26,7 @@ func _ball_hit(body):
 			var instance = ballRes.instance()
 			for u in ballNode.get_node("Upgrades").get_children():
 				var copy = u.duplicate()
+				copy.rare = u.rare
 				instance.get_node("Upgrades").add_child(copy)
 			
 			if instance.get_node("Upgrades").get_node("Survival") != null:
