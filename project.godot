@@ -22,9 +22,14 @@ GlobalSettings="*res://Src/global_settings.gd"
 window/size/width=1280
 window/size/height=720
 
-[editor_plugins]
+[global]
 
-enabled=PoolStringArray( "res://addons/AsepriteWizard/plugin.cfg" )
+build=false
+
+[mono]
+
+export/export_assemblies_inside_pck=false
+export/aot/use_interpreter=false
 
 [physics]
 
@@ -32,4 +37,5 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
+quality/driver/driver_name="GLES2"
 environment/default_environment="res://default_env.tres"

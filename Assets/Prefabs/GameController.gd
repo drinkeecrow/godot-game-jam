@@ -160,38 +160,76 @@ func skill_selection():
 	$Popup/SelectButtons/seleciton4/Tooltip/Title.text = mutation_data[selection_mutation[3]]["Title"] + " - " + selection_rare[3]
 
 func _on_seleciton1_pressed():
-	inventory_mutation.append(selection_mutation[0])
-	inventory_rarity.append(selection_rare[0])
+	var i = 0
+	var found = false
+	for u in inventory_mutation:
+		if u == selection_mutation[0]:
+			inventory_rarity[i] = selection_rare[0]
+			found = true
+		i += 1
+	if not found and inventory_mutation.size()<4:
+		inventory_mutation.append(selection_mutation[0])
+		inventory_rarity.append(selection_rare[0])
 	$Popup/SelectButtons/seleciton1/Tooltip.visible = false
 	$Popup.visible=false
 	update_main_screen_inventory()
 	start_round()
 
 func _on_seleciton2_pressed():
-	inventory_mutation.append(selection_mutation[1])
-	inventory_rarity.append(selection_rare[1])
+	var i = 0
+	var found = false
+	for u in inventory_mutation:
+		if u == selection_mutation[1]:
+			inventory_rarity[i] = selection_rare[1]
+			found = true
+		i += 1
+	if not found and inventory_mutation.size()<4 :
+		inventory_mutation.append(selection_mutation[1])
+		inventory_rarity.append(selection_rare[1])
 	$Popup/SelectButtons/seleciton2/Tooltip.visible = false
 	$Popup.visible=false
 	update_main_screen_inventory()
 	start_round()
 
 func _on_seleciton3_pressed():
-	inventory_mutation.append(selection_mutation[2])
-	inventory_rarity.append(selection_rare[2])
+	var i = 0
+	var found = false
+	for u in inventory_mutation:
+		if u == selection_mutation[2]:
+			inventory_rarity[i] = selection_rare[2]
+			found = true
+		i += 1
+	if not found and inventory_mutation.size()<4:
+		inventory_mutation.append(selection_mutation[2])
+		inventory_rarity.append(selection_rare[2])
 	$Popup/SelectButtons/seleciton3/Tooltip.visible = false
 	$Popup.visible=false
 	update_main_screen_inventory()
 	start_round()
 
 func _on_seleciton4_pressed():
-	inventory_mutation.append(selection_mutation[3])
-	inventory_rarity.append(selection_rare[3])
+	var i = 0
+	var found = false
+	for u in inventory_mutation:
+		if u == selection_mutation[3]:
+			inventory_rarity[i] = selection_rare[3]
+			found = true
+		i += 1
+	if not found and inventory_mutation.size()<4 :
+		inventory_mutation.append(selection_mutation[3])
+		inventory_rarity.append(selection_rare[3])
 	$Popup.visible=false
 	$Popup/SelectButtons/seleciton4/Tooltip.visible = false
 	update_main_screen_inventory()
 	start_round()
 
 func update_main_screen_inventory():
+	#on 4 upgrades, delete the ones you can no longer get
+	if inventory_mutation.size() == 4:
+		for m in mutations:
+			if not inventory_mutation.has(m):
+				mutations.erase(m)
+	
 	var mutations_node = get_tree().get_root().get_node("World/Mutations")	
 	total_cost = 0
 	if inventory_mutation.size() > 0:
@@ -250,3 +288,8 @@ func start_round():
 			upgrade.rare = inventory_rarity[i]
 			ball_node.get_node("Upgrades").add_child(upgrade)
 			i +=1
+
+func _on_MenuButton_pressed():
+	get_tree().change_scene("res://GUI/mainMenu.tscn")
+
+
