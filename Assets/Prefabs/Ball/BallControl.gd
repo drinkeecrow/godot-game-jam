@@ -31,19 +31,21 @@ func _process(delta):
 func _input(event):
 	if event is InputEventMouseButton:
 		state = "releasing"
+		self.set_gravity_scale(1.0)
+		apply_impulse(Vector2(), Vector2(0,1))
+		state = "released"
+		emit_signal("released", self)
 		
 
 func _physics_process(delta):
+	if state == "idle":
+		return
 	var mouse = get_local_mouse_position()
 	var tstep = 0.0
 	tstep += delta * speed
 	if state == "incubating":
 		self.position = self.position.linear_interpolate(mouse + self.position, tstep)
-	elif state == "releasing":
-		self.set_gravity_scale(1.0)
-		apply_impulse(Vector2(), Vector2(0,1))
-		state = "released"
-		emit_signal("released", self)
+		
 	
 func add_score(num):
 	score += num
@@ -72,5 +74,7 @@ func start_mouse_follow():
 		state = "incubating"
 	
 func end_mouse_follow():
-	if state == "incubating":
+	if state == "idle" || "released":
+		return
+	elif state == "incubating":
 		state = "idle"
