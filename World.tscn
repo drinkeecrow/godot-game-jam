@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Assets/Prefabs/GameSpace.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Images/gamebackground.png" type="Texture" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://Assets/Prefabs/tooltip.tscn" type="PackedScene" id=5]
 [ext_resource path="res://GUI/SettingsMenu-World.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/Prefabs/GameController.tscn" type="PackedScene" id=7]
+[ext_resource path="res://GUI/SettingsMenu-World.gd" type="Script" id=8]
+[ext_resource path="res://GUI/pauseMenu.tscn" type="PackedScene" id=9]
 
 [node name="World" type="Node2D"]
 z_index = 1
@@ -73,8 +75,6 @@ text = "Level 2"
 [node name="background" type="Sprite" parent="."]
 z_index = -1
 texture = ExtResource( 2 )
-
-[node name="SettingsMenu" parent="." instance=ExtResource( 6 )]
 
 [node name="GameController" parent="." instance=ExtResource( 7 )]
 
@@ -163,5 +163,13 @@ z_index = 1
 [node name="StartPosition" type="Position2D" parent="."]
 position = Vector2( 104, -297 )
 
+[node name="SettingsMenu" parent="." instance=ExtResource( 6 )]
+visible = false
+script = ExtResource( 8 )
+
+[node name="pauseMenu" parent="SettingsMenu" instance=ExtResource( 9 )]
+pause_mode = 2
+
 [connection signal="pressed" from="Button" to="GameSpace" method="_on_Button_pressed"]
 [connection signal="pressed" from="Button2" to="GameSpace" method="_on_Button2_pressed"]
+[connection signal="popup_hide" from="SettingsMenu/pauseMenu" to="SettingsMenu" method="_on_pauseMenu_popup_hide"]

@@ -43,13 +43,13 @@ margin_bottom = 285.0
 
 [node name="pauseLable" type="Label" parent="MarginContainer/pauseMenuBackground/MarginContainer/pauseMenuItems"]
 margin_right = 370.0
-margin_bottom = 67.0
+margin_bottom = 12.0
 custom_fonts/font = ExtResource( 2 )
 text = "PAUSE"
 align = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/pauseMenuBackground/MarginContainer/pauseMenuItems"]
-margin_top = 71.0
+margin_top = 16.0
 margin_right = 370.0
 margin_bottom = 270.0
 grow_horizontal = 2
@@ -64,23 +64,31 @@ custom_constants/margin_left = 100
 margin_left = 100.0
 margin_top = 50.0
 margin_right = 270.0
-margin_bottom = 199.0
+margin_bottom = 254.0
 custom_constants/separation = 7
 
-[node name="pauseMenuOptionsButton" type="Button" parent="MarginContainer/pauseMenuBackground/MarginContainer/pauseMenuItems/MarginContainer/pauseMenuButtonVBox"]
+[node name="pauseMenuReturnButton" type="Button" parent="MarginContainer/pauseMenuBackground/MarginContainer/pauseMenuItems/MarginContainer/pauseMenuButtonVBox"]
 margin_right = 170.0
-margin_bottom = 40.0
+margin_bottom = 20.0
+custom_fonts/font = ExtResource( 3 )
+text = "Return"
+
+[node name="pauseMenuOptionsButton" type="Button" parent="MarginContainer/pauseMenuBackground/MarginContainer/pauseMenuItems/MarginContainer/pauseMenuButtonVBox"]
+margin_top = 27.0
+margin_right = 170.0
+margin_bottom = 47.0
 custom_fonts/font = ExtResource( 3 )
 text = "Options"
 
 [node name="pauseMenuQuitButton" type="Button" parent="MarginContainer/pauseMenuBackground/MarginContainer/pauseMenuItems/MarginContainer/pauseMenuButtonVBox"]
-margin_top = 47.0
+margin_top = 54.0
 margin_right = 170.0
-margin_bottom = 87.0
+margin_bottom = 74.0
 custom_fonts/font = ExtResource( 3 )
 text = "Quit Game"
 
 [node name="settingsMenu" parent="." instance=ExtResource( 4 )]
 
+[connection signal="pressed" from="MarginContainer/pauseMenuBackground/MarginContainer/pauseMenuItems/MarginContainer/pauseMenuButtonVBox/pauseMenuReturnButton" to="." method="_on_pauseMenuReturnButton_pressed"]
 [connection signal="pressed" from="MarginContainer/pauseMenuBackground/MarginContainer/pauseMenuItems/MarginContainer/pauseMenuButtonVBox/pauseMenuOptionsButton" to="." method="_on_pauseMenuOptionsButton_pressed"]
 [connection signal="pressed" from="MarginContainer/pauseMenuBackground/MarginContainer/pauseMenuItems/MarginContainer/pauseMenuButtonVBox/pauseMenuQuitButton" to="." method="_on_pauseMenuQuitButton_pressed"]
