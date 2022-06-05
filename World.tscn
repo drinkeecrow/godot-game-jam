@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Assets/Prefabs/GameSpace.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Images/gamebackground.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Custom Fonts/settingsMenu_30.tres" type="DynamicFont" id=3]
 [ext_resource path="res://Score.gd" type="Script" id=4]
+[ext_resource path="res://Assets/Prefabs/tooltip.tscn" type="PackedScene" id=5]
 [ext_resource path="res://GUI/SettingsMenu-World.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/Prefabs/GameController.tscn" type="PackedScene" id=7]
 
@@ -82,6 +83,10 @@ scale = Vector2( 0.5, 0.5 )
 position = Vector2( 32, 32 )
 scale = Vector2( 0.5, 0.500001 )
 
+[node name="Tooltip" parent="Mutations/Selection1" instance=ExtResource( 5 )]
+visible = false
+position = Vector2( 125, -111 )
+
 [node name="Selection2" type="Button" parent="Mutations"]
 margin_left = -483.0
 margin_top = 141.0
@@ -96,6 +101,10 @@ scale = Vector2( 0.5, 0.5 )
 [node name="icon" type="Sprite" parent="Mutations/Selection2"]
 position = Vector2( 32, 32 )
 scale = Vector2( 0.5, 0.500001 )
+
+[node name="Tooltip" parent="Mutations/Selection2" instance=ExtResource( 5 )]
+visible = false
+position = Vector2( 41, -111 )
 
 [node name="Selection3" type="Button" parent="Mutations"]
 margin_left = -567.0
@@ -112,6 +121,10 @@ scale = Vector2( 0.5, 0.5 )
 position = Vector2( 32, 32 )
 scale = Vector2( 0.5, 0.500001 )
 
+[node name="Tooltip" parent="Mutations/Selection3" instance=ExtResource( 5 )]
+visible = false
+position = Vector2( 125, -196 )
+
 [node name="Selection4" type="Button" parent="Mutations"]
 margin_left = -483.0
 margin_top = 226.0
@@ -126,6 +139,10 @@ scale = Vector2( 0.5, 0.5 )
 [node name="icon" type="Sprite" parent="Mutations/Selection4"]
 position = Vector2( 32, 32 )
 scale = Vector2( 0.5, 0.500001 )
+
+[node name="Tooltip" parent="Mutations/Selection4" instance=ExtResource( 5 )]
+visible = false
+position = Vector2( 41, -196 )
 
 [node name="StartPosition" type="Position2D" parent="."]
 position = Vector2( 104, -297 )

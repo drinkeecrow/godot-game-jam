@@ -4,7 +4,6 @@ var enabled = true
 var require_hits = 5
 var multiplier = 5
 var hits = 0
-var description = "Allows your cell to digest pegs.  After hitting " + str(require_hits) + " pegs, that peg will be digested and multiply your cells score by " + str(multiplier) + "."
 var ballNode
 var floaty = preload("res://Assets/Prefabs/floatyText.tscn")
 var belch1 = preload("res://Assets/belch1.wav")
@@ -13,6 +12,7 @@ var belch3 = preload("res://Assets/belch3.wav")
 var belch4 = preload("res://Assets/belch4.wav")
 var belch5 = preload("res://Assets/belch5.wav")
 var belch6 = preload("res://Assets/belch6.wav")
+var rare = "Common"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -25,6 +25,16 @@ func _ready():
 
 func _ball_hit(body):
 	if enabled:
+		if rare == "Common":
+			require_hits = 15
+			multiplier = 2
+		if rare == "Rare":
+			require_hits = 10
+			multiplier = 3
+		if rare == "Epic":
+			require_hits = 7
+			multiplier = 4
+			
 		if hits >require_hits:
 			body.queue_free()
 			ballNode.get_node("RigidBody2D").multiply_score(multiplier)

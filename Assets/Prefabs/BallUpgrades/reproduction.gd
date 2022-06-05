@@ -6,7 +6,7 @@ var ballNode
 var hits = 0
 var required_hits = 15
 var enabled = true
-var description = "Allows your cell to reproduce.  Every " + str(required_hits) + " hits will provide an offspring.  Offspring carry all traits of their parent, except the ability to reproduce."
+var rare = "Common"
 
 # Called when the node enters the scene tree for the first time.
 	
@@ -16,8 +16,23 @@ func _ready():
 
 func _ball_hit(body):
 	if enabled:
+		if rare == "Common":
+			required_hits = 15
+		if rare == "Rare":
+			required_hits = 10
+		if rare == "Epic":
+			required_hits = 7
 		if hits >required_hits:
 			var instance = ballRes.instance()
+			for u in ballNode.get_node("Upgrades").get_children():
+				var copy = u.duplicate()
+				instance.get_node("Upgrades").add_child(copy)
+			
+			if instance.get_node("Upgrades").get_node("Survival") != null:
+				instance.get_node("Upgrades").get_node("Survival").enabled = false
+			if instance.get_node("Upgrades").get_node("Reproduction") != null:
+				instance.get_node("Upgrades").get_node("Reproduction").enabled = false
+			
 			get_tree().get_root().get_node("World").add_child(instance)
 			hits=0
 		else:

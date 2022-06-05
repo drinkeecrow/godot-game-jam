@@ -2,7 +2,7 @@ extends Node2D
 
 var ballNode
 var enabled = true
-var description = "Makes your cell extra dense.  It's very heavy."
+var rare = "Common"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -11,4 +11,9 @@ func _ready():
 	
 
 func on_released(body):
-	body.set_gravity_scale(10)
+	if rare == "Common":
+		body.set_gravity_scale(5)
+	if rare == "Rare":
+		body.set_gravity_scale(10)
+	if rare == "Epic":
+		body.set_gravity_scale(20)

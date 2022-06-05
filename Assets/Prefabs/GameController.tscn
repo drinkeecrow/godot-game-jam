@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets/Prefabs/GameController.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Images/MutationSelection.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Images/commonBackground.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Images/reproduction.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Prefabs/tooltip.tscn" type="PackedScene" id=5]
 
 [node name="GameController" type="Node2D"]
 z_index = 1
@@ -43,6 +44,11 @@ scale = Vector2( 0.5, 0.5 )
 z_index = 2
 texture = ExtResource( 4 )
 
+[node name="Tooltip" parent="Popup/SelectButtons/seleciton1" instance=ExtResource( 5 )]
+visible = false
+position = Vector2( 64, -112 )
+z_index = 1
+
 [node name="seleciton2" type="Button" parent="Popup/SelectButtons"]
 margin_left = 285.0
 margin_top = 250.0
@@ -62,6 +68,11 @@ position = Vector2( 32, 32 )
 scale = Vector2( 0.5, 0.5 )
 z_index = 2
 texture = ExtResource( 4 )
+
+[node name="Tooltip" parent="Popup/SelectButtons/seleciton2" instance=ExtResource( 5 )]
+visible = false
+position = Vector2( 24, -112 )
+z_index = 1
 
 [node name="seleciton3" type="Button" parent="Popup/SelectButtons"]
 margin_left = 445.0
@@ -83,6 +94,11 @@ scale = Vector2( 0.5, 0.5 )
 z_index = 2
 texture = ExtResource( 4 )
 
+[node name="Tooltip" parent="Popup/SelectButtons/seleciton3" instance=ExtResource( 5 )]
+visible = false
+position = Vector2( 40, -120 )
+z_index = 1
+
 [node name="seleciton4" type="Button" parent="Popup/SelectButtons"]
 margin_left = 605.0
 margin_top = 250.0
@@ -102,6 +118,11 @@ position = Vector2( 32, 32 )
 scale = Vector2( 0.5, 0.5 )
 z_index = 2
 texture = ExtResource( 4 )
+
+[node name="Tooltip" parent="Popup/SelectButtons/seleciton4" instance=ExtResource( 5 )]
+visible = false
+position = Vector2( 8.00001, -120 )
+z_index = 1
 
 [connection signal="pressed" from="Popup/SelectButtons/seleciton1" to="." method="_on_seleciton1_pressed"]
 [connection signal="pressed" from="Popup/SelectButtons/seleciton2" to="." method="_on_seleciton2_pressed"]

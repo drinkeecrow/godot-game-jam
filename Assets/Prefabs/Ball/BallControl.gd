@@ -47,18 +47,25 @@ func _physics_process(delta):
 	
 func add_score(num):
 	score += num
+	get_tree().get_root().get_node("World/Score").add_score(num)
 	
 func multiply_score(factor):
+	get_tree().get_root().get_node("World/Score").lose_score(score)
 	score = score * factor
+	get_tree().get_root().get_node("World/Score").add_score(score)
+	
 	
 func lose_score(num):
 	score -= num
+	get_tree().get_root().get_node("World/Score").lose_score(num)
 
 func divide_score(div):
+	get_tree().get_root().get_node("World/Score").lose_score(score)
 	score = score / div
-	
-func report_score():
 	get_tree().get_root().get_node("World/Score").add_score(score)
+	
+#func report_score():
+#	get_tree().get_root().get_node("World/Score").add_score(score)
 	
 func start_mouse_follow():
 	if state == "idle":
