@@ -250,9 +250,3 @@ func start_round():
 			upgrade.rare = inventory_rarity[i]
 			ball_node.get_node("Upgrades").add_child(upgrade)
 			i +=1
-	
-func _unhandled_input(event):
-	if event is InputEventKey:
-		if event.pressed:
-			if event.scancode == KEY_ESCAPE:
-				get_tree().change_scene("res://GUI/mainMenu.tscn")
