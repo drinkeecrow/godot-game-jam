@@ -31,13 +31,6 @@ func _ready():
 #	pass
 
 
-func _on_GameSpace_gui_input(_event):
-	pass
-#	if event is InputEventMouseButton and event.is_pressed():
-#		var ball = get_node("Ballmeba/RigidBody2D")
-#		ball.apply_central_impulse(ball.get_parent().position.direction_to(event.position)*100)
-#		print(str(event.position.x) + ' ' + str(event.position.y))
-
 func freeballs():
 	var balls = get_tree().get_nodes_in_group("balls")
 	for ball in balls:

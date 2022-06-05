@@ -6,7 +6,11 @@ var mutations = ["Density", "Digestion", "Photosynthesis", "Reproduction", "Resi
 var selection_rare = []
 var selection_mutation = []
 var ball_prefab=preload("res://Assets/Prefabs/Ball/Ballmeba.tscn")
+var lvl1 = preload("res://Assets/Prefabs/lvl1.tscn")
+var lvl2 = preload("res://Assets/Prefabs/lvl2.tscn")
 var activeBalls = 0
+var total_cost = 0
+var current_level = null
 
 var mutation_data = {
 	"Density": {
@@ -189,41 +193,66 @@ func _on_seleciton4_pressed():
 
 func update_main_screen_inventory():
 	var mutations_node = get_tree().get_root().get_node("World/Mutations")	
+	total_cost = 0
 	if inventory_mutation.size() > 0:
 		mutations_node.get_node("Selection1").get_node("rare").texture = rarity_icons[inventory_rarity[0]]
 		mutations_node.get_node("Selection1").get_node("icon").texture = mutation_icons[inventory_mutation[0]]
 		mutations_node.get_node("Selection1").get_node("Tooltip").get_node("Cost").text = str(mutation_data[inventory_mutation[0]]["Cost"][inventory_rarity[0]])
 		mutations_node.get_node("Selection1").get_node("Tooltip").get_node("Description").text = mutation_data[inventory_mutation[0]]["Description"][inventory_rarity[0]]
 		mutations_node.get_node("Selection1").get_node("Tooltip").get_node("Title").text = mutation_data[inventory_mutation[0]]["Title"] + " - " + inventory_rarity[0]
+		total_cost += mutation_data[inventory_mutation[0]]["Cost"][inventory_rarity[0]]
 	if inventory_mutation.size() > 1:
 		mutations_node.get_node("Selection2").get_node("rare").texture = rarity_icons[inventory_rarity[1]]
 		mutations_node.get_node("Selection2").get_node("icon").texture = mutation_icons[inventory_mutation[1]]
 		mutations_node.get_node("Selection2").get_node("Tooltip").get_node("Cost").text = str(mutation_data[inventory_mutation[1]]["Cost"][inventory_rarity[1]])
 		mutations_node.get_node("Selection2").get_node("Tooltip").get_node("Description").text = mutation_data[inventory_mutation[1]]["Description"][inventory_rarity[1]]
 		mutations_node.get_node("Selection2").get_node("Tooltip").get_node("Title").text = mutation_data[inventory_mutation[1]]["Title"] + " - " + inventory_rarity[1]
+		total_cost += mutation_data[inventory_mutation[1]]["Cost"][inventory_rarity[1]]
 	if inventory_mutation.size() > 2:
 		mutations_node.get_node("Selection3").get_node("rare").texture = rarity_icons[inventory_rarity[2]]
 		mutations_node.get_node("Selection3").get_node("icon").texture = mutation_icons[inventory_mutation[2]]
 		mutations_node.get_node("Selection3").get_node("Tooltip").get_node("Cost").text = str(mutation_data[inventory_mutation[2]]["Cost"][inventory_rarity[2]])
 		mutations_node.get_node("Selection3").get_node("Tooltip").get_node("Description").text = mutation_data[inventory_mutation[2]]["Description"][inventory_rarity[2]]
 		mutations_node.get_node("Selection3").get_node("Tooltip").get_node("Title").text = mutation_data[inventory_mutation[2]]["Title"] + " - " + inventory_rarity[2]
+		total_cost += mutation_data[inventory_mutation[2]]["Cost"][inventory_rarity[2]]
 	if inventory_mutation.size() > 3:
 		mutations_node.get_node("Selection4").get_node("rare").texture = rarity_icons[inventory_rarity[3]]
 		mutations_node.get_node("Selection4").get_node("icon").texture = mutation_icons[inventory_mutation[3]]
 		mutations_node.get_node("Selection4").get_node("Tooltip").get_node("Cost").text = str(mutation_data[inventory_mutation[3]]["Cost"][inventory_rarity[3]])
 		mutations_node.get_node("Selection4").get_node("Tooltip").get_node("Description").text = mutation_data[inventory_mutation[3]]["Description"][inventory_rarity[3]]
 		mutations_node.get_node("Selection4").get_node("Tooltip").get_node("Title").text = mutation_data[inventory_mutation[3]]["Title"] + " - " + inventory_rarity[3]
-	
+		total_cost += mutation_data[inventory_mutation[3]]["Cost"][inventory_rarity[3]]
+	get_tree().get_root().get_node("World/Cost").text = str(total_cost)
+		
 func start_round():
-	var ball_node = ball_prefab.instance()
-	get_tree().get_root().get_node("World").add_child(ball_node)
+	var score_node = get_tree().get_root().get_node("World").get_node("Score")
+	if total_cost > score_node.score:
+		$GameOver.visible = true
+	else:
+		if current_level != null:
+			current_level.queue_free()
+		var rng = RandomNumberGenerator.new()
+		rng.randomize()
+		var rndLvl = rng.randi_range(1,2)
+		var instance
+		if rndLvl == 1:
+			instance = lvl1.instance()
+		elif rndLvl == 2:
+			instance = lvl2.instance()
+		current_level = instance
+		get_tree().get_root().get_node("World").get_node("GameSpace").add_child(instance)
+		score_node.lose_score(total_cost)
+		var ball_node = ball_prefab.instance()
+		get_tree().get_root().get_node("World").add_child(ball_node)
+		var i = 0
+		for m in inventory_mutation:
+			var upgrade = mutation_prefabs[m].instance()
+			upgrade.rare = inventory_rarity[i]
+			ball_node.get_node("Upgrades").add_child(upgrade)
+			i +=1
 	
-	var i = 0
-	for m in inventory_mutation:
-		var upgrade = mutation_prefabs[m].instance()
-		upgrade.rare = inventory_rarity[i]
-		ball_node.get_node("Upgrades").add_child(upgrade)
-		i +=1
-	
-
-
+func _unhandled_input(event):
+	if event is InputEventKey:
+		if event.pressed:
+			if event.scancode == KEY_ESCAPE:
+				get_tree().change_scene("res://GUI/mainMenu.tscn")
