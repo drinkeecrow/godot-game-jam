@@ -74,7 +74,5 @@ func start_mouse_follow():
 		state = "incubating"
 	
 func end_mouse_follow():
-	if state == "idle" || "released":
-		return
-	elif state == "incubating":
+	if state == "incubating":
 		state = "idle"
